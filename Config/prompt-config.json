@@ -1,0 +1,37 @@
+{
+  "brandName": "PDF2Press",
+  "toneNote": "Ton rassurant, positif, mettre le client en confiance.",
+  "ctaText": {
+    "fr": "Si vous avez un doute, envoyez-nous le fichier tel quel en approuvant le fichier mais en nous indiquant vos indications dans les notes qui vous seront demandées lors de l'approbation et nous vous conseillerons.",
+    "es": "Si tiene dudas, envíenos el archivo tal cual y le aconsejaremos.",
+    "en": "If you’re unsure, send us the file as is and we’ll advise you."
+  },
+  "sectionTitles": {
+    "summary": "### 1. Résumé global",
+    "issues": "### 2. Problèmes à corriger",
+    "warnings": "### 3. Points à surveiller",
+    "actions": "### 4. Ce que vous devez faire maintenant",
+    "batHints": "### 5. Où trouver les zones à corriger dans le BAT"
+  },
+  "helpLinks": {
+    "fr": [
+      {
+        "code": "imageResolution",
+        "url": "https://votre-site-aide/fr/resolution-image",
+        "label": "En savoir plus sur la résolution d’image"
+      },
+      {
+        "code": "richBlack",
+        "url": "https://votre-site-aide/fr/noir-enrichi",
+        "label": "En savoir plus sur le noir enrichi (rich black)"
+      }
+    ],
+    "es": [
+      {
+        "code": "imageResolution",
+        "url": "https://votre-site-aide/es/resolucion-imagen",
+        "label": "Más información sobre la resolución de imagen"
+      }
+    ]
+  }
+}

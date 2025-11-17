@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Test Chat PDF2Press</title>
+  </head>
+  <body>
+    <h1>Chat test local</h1>
+    <textarea id="input" rows="4" cols="60" placeholder="Écris ton message ici..."></textarea><br />
+    <button id="send">Envoyer</button>
+    <pre id="output"></pre>
+
+    <script>
+      document.getElementById("send").addEventListener("click", async () => {
+        const text = document.getElementById("input").value.trim();
+        if (!text) return;
+        const res = await fetch("http://localhost:3000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            messages: [{ role: "user", content: text }],
+          }),
+        });
+        const data = await res.json();
+        document.getElementById("output").textContent =
+          (data.reply || data.error || "").trim();
+      });
+    </script>
+  </body>
+</html>

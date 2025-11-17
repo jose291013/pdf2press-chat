@@ -1,0 +1,1826 @@
+{
+    "result": {
+        "workflowLogId": "0885bb13-d2d0-4a44-8e2a-4947870bcc76",
+        "runId": "f5a471a7-0156-4ffd-ad25-fe3fc2dac269",
+        "status": 3,
+        "workflowLogs": [
+            {
+                "workflowId": "3504dff8-40a5-4504-9066-98848df8a00b",
+                "fileInjection": {
+                    "status": 3,
+                    "args": {
+                        "workflowId": "3504dff8-40a5-4504-9066-98848df8a00b",
+                        "stepId": "c528d95e-36d1-401e-9002-6e4fbf892a50",
+                        "parameters": {
+                            "valueKind": 2
+                        },
+                        "subscriberId": "4834db0f-cf25-4833-b123-ce3ff80008cc",
+                        "injectorSessionId": "f5a471a7-0156-4ffd-ad25-fe3fc2dac269",
+                        "workflowVersion": 62,
+                        "fromWorkflowSessionId": null,
+                        "sendEmailTo": [
+                            null
+                        ],
+                        "proofingBaseUrl": "https://decoration.ams.v6.pressero.com/Pdf2Press/ProofView?orderItemId=301f0000-568f-0050-81d1-08de24f157e1",
+                        "postbackNotificationUrl": "https://decoration.ams.v6.pressero.com/Pdf2Press/ProductionFileReady/301f0000-568f-0050-81d1-08de24f157e1",
+                        "fromData": {
+                            "valueKind": 1
+                        },
+                        "userVariables": [
+                            {
+                                "name": "Quantity",
+                                "value": "1000"
+                            },
+                            {
+                                "name": "Quantité",
+                                "value": "1000"
+                            },
+                            {
+                                "name": "Nombre de version",
+                                "value": "2"
+                            },
+                            {
+                                "name": "Format",
+                                "value": "A4 (210 x 297 mm)"
+                            },
+                            {
+                                "name": "Orientation",
+                                "value": "Verticale"
+                            },
+                            {
+                                "name": "Impression",
+                                "value": "Quadri Recto Verso"
+                            },
+                            {
+                                "name": "Papier",
+                                "value": "90 gr. Offset"
+                            },
+                            {
+                                "name": "Pelliculage",
+                                "value": "Sans Pelliculage"
+                            },
+                            {
+                                "name": "Finition",
+                                "value": "Coins Carrés"
+                            },
+                            {
+                                "name": "Envoie Bon à tirer",
+                                "value": "Non"
+                            },
+                            {
+                                "name": "Délai de Fabrication",
+                                "value": "J+3"
+                            },
+                            {
+                                "name": "Date de Livraison estimée",
+                                "value": "Jeudi 20 novembre 2025"
+                            },
+                            {
+                                "name": "Largeur",
+                                "value": "210"
+                            },
+                            {
+                                "name": "Hauteur",
+                                "value": "297"
+                            },
+                            {
+                                "name": "Nombre de page",
+                                "value": "2"
+                            },
+                            {
+                                "name": "Quantity",
+                                "value": "1000"
+                            }
+                        ],
+                        "source": "Pressero",
+                        "sourceLink": null,
+                        "sourceLinkLabel": "Cart jose.nieto@aleyant.com on decoration.ams.v6.pressero.com",
+                        "systemRuntimeVariables": {
+                            "FileInfo.FileInfo.FileName": {
+                                "fieldLabel": "The name of the original file",
+                                "fieldType": 1,
+                                "value": {
+                                    "valueKind": 3
+                                }
+                            },
+                            "FileInfo.FileInfo.FileSize": {
+                                "fieldLabel": "The file size in MB",
+                                "fieldType": 0,
+                                "value": {
+                                    "valueKind": 4
+                                }
+                            },
+                            "FileInfo.FileInfo.PageCount": {
+                                "fieldLabel": "The quantity of pages",
+                                "fieldType": 0,
+                                "value": {
+                                    "valueKind": 4
+                                }
+                            },
+                            "FileInfo.FileInfo.PageWidth": {
+                                "fieldLabel": "The Width of the first page",
+                                "fieldType": 0,
+                                "value": {
+                                    "valueKind": 4
+                                }
+                            },
+                            "FileInfo.FileInfo.PageHeight": {
+                                "fieldLabel": "The height of the first page",
+                                "fieldType": 0,
+                                "value": {
+                                    "valueKind": 4
+                                }
+                            },
+                            "FileInfo.FileInfo.TrimboxWidth": {
+                                "fieldLabel": "The Trimbox Width of the first page",
+                                "fieldType": 0,
+                                "value": {
+                                    "valueKind": 4
+                                }
+                            },
+                            "FileInfo.FileInfo.TrimboxHeight": {
+                                "fieldLabel": "The Trimbox height of the first page",
+                                "fieldType": 0,
+                                "value": {
+                                    "valueKind": 4
+                                }
+                            },
+                            "FileInfo.FileInfo.AllPagesSameDimension": {
+                                "fieldLabel": "If all the pages are in the same dimension",
+                                "fieldType": 1,
+                                "value": {
+                                    "valueKind": 5
+                                }
+                            }
+                        },
+                        "notes": null,
+                        "convertFilesToPdf": false,
+                        "type": 3,
+                        "targetDPI": 0
+                    },
+                    "results": null,
+                    "name": null,
+                    "startedOn": "2025-11-16T09:20:39.596511Z",
+                    "finishedOn": "2025-11-16T09:20:39.598132Z"
+                },
+                "steps": [
+                    {
+                        "id": "316cede4-ef20-4e38-ab85-88b72faeb36d",
+                        "summary": [],
+                        "actions": [],
+                        "type": 2,
+                        "holdStatus": null,
+                        "result": null,
+                        "args": null,
+                        "name": "Inject",
+                        "status": 3,
+                        "startedOn": "2025-11-16T09:20:39.596511Z",
+                        "finishedOn": "2025-11-16T09:20:39.598132Z"
+                    },
+                    {
+                        "id": "a8852140-466d-4c4f-b8ec-17926ec27d90",
+                        "summary": [],
+                        "actions": [],
+                        "type": 6,
+                        "holdStatus": null,
+                        "result": {
+                            "conditionArgs": {
+                                "rules": [
+                                    {
+                                        "type": 0,
+                                        "field": "Hauteur",
+                                        "operator": 2,
+                                        "value": "{Largeur}"
+                                    }
+                                ],
+                                "units": 1
+                            },
+                            "workflowStepId": "1112a43f-23aa-4432-9d61-1d2bcae858ec",
+                            "condition": "(841.89105 > 595.2764999999999)",
+                            "result": true
+                        },
+                        "args": null,
+                        "name": "Condition",
+                        "status": 3,
+                        "startedOn": "2025-11-16T09:20:39.905948Z",
+                        "finishedOn": "2025-11-16T09:20:39.909127Z"
+                    },
+                    {
+                        "id": "3ff7e1b5-1b40-459b-9169-37882f94e94a",
+                        "summary": [],
+                        "actions": [],
+                        "type": 6,
+                        "holdStatus": null,
+                        "result": {
+                            "conditionArgs": {
+                                "rules": [
+                                    {
+                                        "type": 0,
+                                        "field": "FileInfo.FileInfo.TrimboxHeight",
+                                        "operator": 2,
+                                        "value": "{FileInfo.FileInfo.TrimboxWidth}"
+                                    }
+                                ],
+                                "units": 1
+                            },
+                            "workflowStepId": "1abefb8b-f263-4ffb-9ca6-9018db6d59df",
+                            "condition": "(420.945 > 297.638)",
+                            "result": true
+                        },
+                        "args": null,
+                        "name": "Condition",
+                        "status": 3,
+                        "startedOn": "2025-11-16T09:20:39.914194Z",
+                        "finishedOn": "2025-11-16T09:20:39.917448Z"
+                    },
+                    {
+                        "id": "26e6bbf5-e2ed-4a54-a6ef-c5557d7beba2",
+                        "summary": [],
+                        "actions": [
+                            {
+                                "args": {
+                                    "Width": 210,
+                                    "Height": 297,
+                                    "Scaling": 1,
+                                    "SubscriberId": "4834db0f-cf25-4833-b123-ce3ff80008cc",
+                                    "UnitOfMeasure": 1,
+                                    "StretchMaxSkew": 2
+                                },
+                                "results": {
+                                    "Pages": [
+                                        {
+                                            "UserUnit": 1,
+                                            "NewTrimBox": "[0 0 210.00000000000003 297]",
+                                            "PageNumber": 1,
+                                            "NewMediaBox": "[0 0 210.00000000000003 297]",
+                                            "OriginalTrimBox": "[0 0 104.99991180569029 148.49981479194963]",
+                                            "OriginalMediaBox": "[0 0 104.99991180569029 148.49981479194963]"
+                                        },
+                                        {
+                                            "UserUnit": 1,
+                                            "NewTrimBox": "[0 0 210.00000000000003 297]",
+                                            "PageNumber": 2,
+                                            "NewMediaBox": "[0 0 210.00000000000003 297]",
+                                            "OriginalTrimBox": "[0 0 104.99991180569029 148.49981479194963]",
+                                            "OriginalMediaBox": "[0 0 104.99991180569029 148.49981479194963]"
+                                        }
+                                    ],
+                                    "Method": 1,
+                                    "MaxSkew": 2,
+                                    "Success": true,
+                                    "NewWidth": 210,
+                                    "NewHeight": 297,
+                                    "WouldExceedMaxSkew": false
+                                },
+                                "validations": [],
+                                "unitOfMeasure": 1,
+                                "actionType": 1,
+                                "profileType": 1,
+                                "message": null,
+                                "level": 0,
+                                "name": null,
+                                "status": 1,
+                                "startedOn": "2025-11-16T09:20:39.9850619Z",
+                                "finishedOn": "2025-11-16T09:20:40.0341847Z"
+                            }
+                        ],
+                        "type": 11,
+                        "holdStatus": null,
+                        "result": null,
+                        "args": {
+                            "actions": [
+                                {
+                                    "profileLogId": "00000000-0000-0000-0000-000000000000",
+                                    "profileLog": null,
+                                    "profileActionId": "00000000-0000-0000-0000-000000000000",
+                                    "profileAction": null,
+                                    "status": 1,
+                                    "profileType": 1,
+                                    "actionType": 1,
+                                    "args": {
+                                        "Width": 210,
+                                        "Height": 297,
+                                        "Scaling": 1,
+                                        "SubscriberId": "4834db0f-cf25-4833-b123-ce3ff80008cc",
+                                        "UnitOfMeasure": 1,
+                                        "StretchMaxSkew": 2
+                                    },
+                                    "results": {
+                                        "Pages": [
+                                            {
+                                                "UserUnit": 1,
+                                                "NewTrimBox": "[0 0 210.00000000000003 297]",
+                                                "PageNumber": 1,
+                                                "NewMediaBox": "[0 0 210.00000000000003 297]",
+                                                "OriginalTrimBox": "[0 0 104.99991180569029 148.49981479194963]",
+                                                "OriginalMediaBox": "[0 0 104.99991180569029 148.49981479194963]"
+                                            },
+                                            {
+                                                "UserUnit": 1,
+                                                "NewTrimBox": "[0 0 210.00000000000003 297]",
+                                                "PageNumber": 2,
+                                                "NewMediaBox": "[0 0 210.00000000000003 297]",
+                                                "OriginalTrimBox": "[0 0 104.99991180569029 148.49981479194963]",
+                                                "OriginalMediaBox": "[0 0 104.99991180569029 148.49981479194963]"
+                                            }
+                                        ],
+                                        "Method": 1,
+                                        "MaxSkew": 2,
+                                        "Success": true,
+                                        "NewWidth": 210,
+                                        "NewHeight": 297,
+                                        "WouldExceedMaxSkew": false
+                                    },
+                                    "sequence": 0,
+                                    "validations": [],
+                                    "scheduleOn": "2025-11-16T09:20:39.9850614Z",
+                                    "startedOn": "2025-11-16T09:20:39.9850619Z",
+                                    "finishedOn": "2025-11-16T09:20:40.0341847Z",
+                                    "id": "00000000-0000-0000-0000-000000000000"
+                                }
+                            ],
+                            "profileType": 1,
+                            "validations": []
+                        },
+                        "name": "ActionStep",
+                        "status": 3,
+                        "startedOn": "2025-11-16T09:20:39.922746Z",
+                        "finishedOn": "2025-11-16T09:20:40.034198Z"
+                    },
+                    {
+                        "id": "90c1fa9d-ecab-4d26-902b-15213ecf6581",
+                        "summary": [],
+                        "actions": [],
+                        "type": 6,
+                        "holdStatus": null,
+                        "result": {
+                            "conditionArgs": {
+                                "rules": [
+                                    {
+                                        "type": 0,
+                                        "field": "Impression",
+                                        "operator": 0,
+                                        "value": "Quadri Recto"
+                                    },
+                                    {
+                                        "type": 1,
+                                        "field": "Impression",
+                                        "operator": 0,
+                                        "value": "Quadri Recto Verso"
+                                    }
+                                ],
+                                "units": 1
+                            },
+                            "workflowStepId": "1275b8e5-f22a-4050-8fa4-2bbda49cf152",
+                            "condition": "((\"Quadri Recto Verso\" == \"Quadri Recto\") OrElse (\"Quadri Recto Verso\" == \"Quadri Recto Verso\"))",
+                            "result": true
+                        },
+                        "args": null,
+                        "name": "Condition",
+                        "status": 3,
+                        "startedOn": "2025-11-16T09:20:40.038682Z",
+                        "finishedOn": "2025-11-16T09:20:40.042617Z"
+                    },
+                    {
+                        "id": "938916cc-9e4a-4039-baab-32a8d81efa4f",
+                        "summary": [
+                            {
+                                "actionType": 6,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 7,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 4,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 5,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 0,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 9,
+                                "result": 0
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "args": "{\"RboC\": 50, \"RboK\": 50, \"RboM\": 50, \"RboY\": 50, \"IntoC\": 0, \"IntoK\": 0, \"IntoM\": 0, \"IntoY\": 0, \"MaximunInk\": 300, \"MinimumBlack\": 0, \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"ReduceApplyTo\": 2, \"UnitOfMeasure\": 1, \"ConvertApplyTo\": 0, \"ConvertBlackObjects\": false, \"ReduceRichBlackObjects\": true}",
+                                "results": null,
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 6,
+                                "profileType": 1,
+                                "message": null,
+                                "level": 0,
+                                "name": "RichBlack",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:20:40.096182Z",
+                                "finishedOn": "2025-11-16T09:20:40.27497Z"
+                            },
+                            {
+                                "args": "{\"OutlineFonts\": true, \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1}",
+                                "results": "{\"Success\": true}",
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 7,
+                                "profileType": 1,
+                                "message": null,
+                                "level": 0,
+                                "name": "FontsOutline",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:20:40.318559Z",
+                                "finishedOn": "2025-11-16T09:20:40.482908Z"
+                            },
+                            {
+                                "args": "{\"Method\": 0, \"BleedSize\": 3, \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1}",
+                                "results": "{\"BleedPageInfo\": [{\"Page\": 1, \"Success\": true, \"BleedAdded\": true, \"BleedPresent\": false}, {\"Page\": 2, \"Success\": true, \"BleedAdded\": true, \"BleedPresent\": false}], \"BleedSizeAdded\": 3}",
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 4,
+                                "profileType": 1,
+                                "message": null,
+                                "level": 0,
+                                "name": "AddBleeds",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:20:40.531742Z",
+                                "finishedOn": "2025-11-16T09:20:40.781555Z"
+                            },
+                            {
+                                "args": "{\"AddTrimMarks\": true, \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1}",
+                                "results": "{\"TrimAddedToPages\": [1, 2]}",
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 5,
+                                "profileType": 1,
+                                "message": null,
+                                "level": 0,
+                                "name": "AddTrimMarks",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:20:40.821762Z",
+                                "finishedOn": "2025-11-16T09:20:40.979009Z"
+                            },
+                            {
+                                "args": null,
+                                "results": "{\"Message\": \"\", \"Profile\": \"CoatedFOGRA39.icc\", \"Success\": true, \"PagesRecolored\": 1, \"BitmapsRecolored\": 0}",
+                                "validations": "[{\"Message\":\"Request {\\\"requestId\\\":\\\"3504dff8-40a5-4504-9066-98848df8a00b_FixBatchExecutor\\\",\\\"updateURL\\\":null,\\\"profile\\\":\\\"local://resources/profiles/5847292a-c732-46f0-91da-a8dbfc00c573/Atomyx_fixups_v1.3.2.kfpx\\\",\\\"inputFiles\\\":[\\\"https://ams.api.pdf2press.aleyant.com/image/file/008d0f26-77d1-4cf3-ad63-c749062a0184\\\"],\\\"reports\\\":[{\\\"type\\\":\\\"json\\\",\\\"when\\\":\\\"always\\\",\\\"options\\\":\\\"overview,language=EN\\\",\\\"outputName\\\":\\\"report.json\\\"}],\\\"variables\\\":{\\\"tfall_scaling_factor\\\":\\\"100%\\\",\\\"tfall_measurement_unit\\\":\\\"mm\\\",\\\"tfpre_bleed_allsides\\\":\\\"1.0\\\",\\\"tfpre_bleed_method\\\":\\\"Mirror as image (edges and corners)\\\",\\\"tpre_create_bleed\\\":0,\\\"tfpre_convert_colors_cmyk\\\":1,\\\"tfpre_convert_spot\\\":1,\\\"tfpre_icc_profile\\\":\\\"local://resources/profiles/2cc45be1-136c-4dea-aec8-b0cc6c6effbc/CoatedFOGRA39.icc\\\",\\\"tfpre_flattening\\\":1,\\\"tfpre_flattening_res\\\":300,\\\"tfall_create_crop_marks\\\":0,\\\"tfall_k2rich_c\\\":0.0,\\\"tfall_k2rich_m\\\":0.0,\\\"tfall_k2rich_y\\\":0.0,\\\"tfall_k2rich_k\\\":0.0,\\\"tfall_rich2k_c\\\":0.0,\\\"tfall_rich2k_m\\\":0.0,\\\"tfall_rich2k_y\\\":0.0,\\\"tfall_rich2k_k\\\":0.0,\\\"tfpre_map_black2rich_text\\\":0,\\\"tfpre_map_black2rich_vector\\\":0,\\\"tfpre_map_rich2black_text\\\":0,\\\"tfpre_map_rich2black_vector\\\":0,\\\"tfpre_rich_maxink\\\":\\\"300\\\",\\\"tfpre_rich_maxink_minblack\\\":\\\"80\\\",\\\"tfpre_set_overprint_black_fill\\\":0,\\\"tfpre_set_overprint_black_vectors\\\":0,\\\"tfpre_set_overprint_spot_fill\\\":0,\\\"tfpre_set_overprint_spot_vectors\\\":0,\\\"tfpre_spot_regex\\\":\\\"\\\"}} - TaskResult {\\\"Success\\\":true,\\\"StatusCode\\\":200,\\\"TaskId\\\":\\\"c395b943-46b1-496d-b164-bab0f7dc59aa\\\",\\\"Status\\\":\\\"completed\\\",\\\"Output\\\":[\\\"https://atomyx-prod-ecs20240417093031171600000001.s3.amazonaws.com/output/c395b943-46b1-496d-b164-bab0f7dc59aa/008d0f26-77d1-4cf3-ad63-c749062a0184.pdf\\\",\\\"https://atomyx-prod-ecs20240417093031171600000001.s3.amazonaws.com/output/c395b943-46b1-496d-b164-bab0f7dc59aa/report.json\\\"],\\\"Errors\\\":null} - ProfileRequestresult {\\\"TaskId\\\":\\\"c395b943-46b1-496d-b164-bab0f7dc59aa\\\",\\\"TotalInQueue\\\":0,\\\"RequestId\\\":\\\"3504dff8-40a5-4504-9066-98848df8a00b_FixBatchExecutor\\\",\\\"Success\\\":true,\\\"StatusCode\\\":200}\",\"Level\":0,\"Data\":null,\"FieldName\":null,\"Type\":0}]",
+                                "unitOfMeasure": 1,
+                                "actionType": 0,
+                                "profileType": 1,
+                                "message": null,
+                                "level": 0,
+                                "name": "ColorspaceTransformation",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:23:51.60477Z",
+                                "finishedOn": "2025-11-16T09:23:51.60478Z"
+                            },
+                            {
+                                "args": null,
+                                "results": "{\"Log\": \"Processed successfully\", \"Success\": true}",
+                                "validations": "[{\"Message\":\"Request {\\\"requestId\\\":\\\"3504dff8-40a5-4504-9066-98848df8a00b_FixBatchExecutor\\\",\\\"updateURL\\\":null,\\\"profile\\\":\\\"local://resources/profiles/5847292a-c732-46f0-91da-a8dbfc00c573/Atomyx_fixups_v1.3.2.kfpx\\\",\\\"inputFiles\\\":[\\\"https://ams.api.pdf2press.aleyant.com/image/file/008d0f26-77d1-4cf3-ad63-c749062a0184\\\"],\\\"reports\\\":[{\\\"type\\\":\\\"json\\\",\\\"when\\\":\\\"always\\\",\\\"options\\\":\\\"overview,language=EN\\\",\\\"outputName\\\":\\\"report.json\\\"}],\\\"variables\\\":{\\\"tfall_scaling_factor\\\":\\\"100%\\\",\\\"tfall_measurement_unit\\\":\\\"mm\\\",\\\"tfpre_bleed_allsides\\\":\\\"1.0\\\",\\\"tfpre_bleed_method\\\":\\\"Mirror as image (edges and corners)\\\",\\\"tpre_create_bleed\\\":0,\\\"tfpre_convert_colors_cmyk\\\":1,\\\"tfpre_convert_spot\\\":1,\\\"tfpre_icc_profile\\\":\\\"local://resources/profiles/2cc45be1-136c-4dea-aec8-b0cc6c6effbc/CoatedFOGRA39.icc\\\",\\\"tfpre_flattening\\\":1,\\\"tfpre_flattening_res\\\":300,\\\"tfall_create_crop_marks\\\":0,\\\"tfall_k2rich_c\\\":0.0,\\\"tfall_k2rich_m\\\":0.0,\\\"tfall_k2rich_y\\\":0.0,\\\"tfall_k2rich_k\\\":0.0,\\\"tfall_rich2k_c\\\":0.0,\\\"tfall_rich2k_m\\\":0.0,\\\"tfall_rich2k_y\\\":0.0,\\\"tfall_rich2k_k\\\":0.0,\\\"tfpre_map_black2rich_text\\\":0,\\\"tfpre_map_black2rich_vector\\\":0,\\\"tfpre_map_rich2black_text\\\":0,\\\"tfpre_map_rich2black_vector\\\":0,\\\"tfpre_rich_maxink\\\":\\\"300\\\",\\\"tfpre_rich_maxink_minblack\\\":\\\"80\\\",\\\"tfpre_set_overprint_black_fill\\\":0,\\\"tfpre_set_overprint_black_vectors\\\":0,\\\"tfpre_set_overprint_spot_fill\\\":0,\\\"tfpre_set_overprint_spot_vectors\\\":0,\\\"tfpre_spot_regex\\\":\\\"\\\"}} - TaskResult {\\\"Success\\\":true,\\\"StatusCode\\\":200,\\\"TaskId\\\":\\\"c395b943-46b1-496d-b164-bab0f7dc59aa\\\",\\\"Status\\\":\\\"completed\\\",\\\"Output\\\":[\\\"https://atomyx-prod-ecs20240417093031171600000001.s3.amazonaws.com/output/c395b943-46b1-496d-b164-bab0f7dc59aa/008d0f26-77d1-4cf3-ad63-c749062a0184.pdf\\\",\\\"https://atomyx-prod-ecs20240417093031171600000001.s3.amazonaws.com/output/c395b943-46b1-496d-b164-bab0f7dc59aa/report.json\\\"],\\\"Errors\\\":null} - ProfileRequestresult {\\\"TaskId\\\":\\\"c395b943-46b1-496d-b164-bab0f7dc59aa\\\",\\\"TotalInQueue\\\":0,\\\"RequestId\\\":\\\"3504dff8-40a5-4504-9066-98848df8a00b_FixBatchExecutor\\\",\\\"Success\\\":true,\\\"StatusCode\\\":200}\",\"Level\":0,\"Data\":null,\"FieldName\":null,\"Type\":0}]",
+                                "unitOfMeasure": 1,
+                                "actionType": 9,
+                                "profileType": 1,
+                                "message": null,
+                                "level": 0,
+                                "name": "FlatteningTransparencies",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:23:51.606533Z",
+                                "finishedOn": "2025-11-16T09:23:51.606538Z"
+                            }
+                        ],
+                        "type": 4,
+                        "holdStatus": null,
+                        "result": null,
+                        "args": null,
+                        "name": "Fix",
+                        "status": 3,
+                        "startedOn": "2025-11-16T09:20:40.049082Z",
+                        "finishedOn": "2025-11-16T09:23:51.609988Z"
+                    },
+                    {
+                        "id": "47cf4280-ea4d-4ff1-849f-c8b0f4482653",
+                        "summary": [],
+                        "actions": [],
+                        "type": 6,
+                        "holdStatus": null,
+                        "result": {
+                            "conditionArgs": {
+                                "rules": [
+                                    {
+                                        "type": 0,
+                                        "field": "FileInfo.FileInfo.TrimboxHeight",
+                                        "operator": 0,
+                                        "value": "{FileInfo.FileInfo.PageHeight}"
+                                    },
+                                    {
+                                        "type": 1,
+                                        "field": "FileInfo.FileInfo.TrimboxWidth",
+                                        "operator": 0,
+                                        "value": "{FileInfo.FileInfo.PageWidth}"
+                                    }
+                                ],
+                                "units": 1
+                            },
+                            "workflowStepId": "eabbf464-9bec-430d-8350-54b1f5de0180",
+                            "condition": "((420.945 == 420.945) OrElse (297.638 == 297.638))",
+                            "result": true
+                        },
+                        "args": null,
+                        "name": "Condition",
+                        "status": 3,
+                        "startedOn": "2025-11-16T09:23:51.620539Z",
+                        "finishedOn": "2025-11-16T09:23:51.625509Z"
+                    },
+                    {
+                        "id": "6b943383-5c85-4a11-9d73-c9fb2d426d0f",
+                        "summary": [],
+                        "actions": [
+                            {
+                                "args": {
+                                    "Method": 0,
+                                    "BleedSize": 3,
+                                    "SubscriberId": "4834db0f-cf25-4833-b123-ce3ff80008cc",
+                                    "UnitOfMeasure": 1
+                                },
+                                "results": {
+                                    "BleedPageInfo": [
+                                        {
+                                            "Page": 1,
+                                            "Success": true,
+                                            "BleedAdded": true,
+                                            "BleedPresent": true
+                                        },
+                                        {
+                                            "Page": 2,
+                                            "Success": true,
+                                            "BleedAdded": true,
+                                            "BleedPresent": true
+                                        }
+                                    ],
+                                    "BleedSizeAdded": 3
+                                },
+                                "validations": [],
+                                "unitOfMeasure": 1,
+                                "actionType": 4,
+                                "profileType": 1,
+                                "message": null,
+                                "level": 0,
+                                "name": null,
+                                "status": 1,
+                                "startedOn": "2025-11-16T09:23:51.6785609Z",
+                                "finishedOn": "2025-11-16T09:23:51.7778375Z"
+                            }
+                        ],
+                        "type": 11,
+                        "holdStatus": null,
+                        "result": null,
+                        "args": {
+                            "actions": [
+                                {
+                                    "profileLogId": "00000000-0000-0000-0000-000000000000",
+                                    "profileLog": null,
+                                    "profileActionId": "00000000-0000-0000-0000-000000000000",
+                                    "profileAction": null,
+                                    "status": 1,
+                                    "profileType": 1,
+                                    "actionType": 4,
+                                    "args": {
+                                        "Method": 0,
+                                        "BleedSize": 3,
+                                        "SubscriberId": "4834db0f-cf25-4833-b123-ce3ff80008cc",
+                                        "UnitOfMeasure": 1
+                                    },
+                                    "results": {
+                                        "BleedPageInfo": [
+                                            {
+                                                "Page": 1,
+                                                "Success": true,
+                                                "BleedAdded": true,
+                                                "BleedPresent": true
+                                            },
+                                            {
+                                                "Page": 2,
+                                                "Success": true,
+                                                "BleedAdded": true,
+                                                "BleedPresent": true
+                                            }
+                                        ],
+                                        "BleedSizeAdded": 3
+                                    },
+                                    "sequence": 0,
+                                    "validations": [],
+                                    "scheduleOn": "2025-11-16T09:23:51.6785607Z",
+                                    "startedOn": "2025-11-16T09:23:51.6785609Z",
+                                    "finishedOn": "2025-11-16T09:23:51.7778375Z",
+                                    "id": "00000000-0000-0000-0000-000000000000"
+                                }
+                            ],
+                            "profileType": 1,
+                            "validations": []
+                        },
+                        "name": "ActionStep",
+                        "status": 3,
+                        "startedOn": "2025-11-16T09:23:51.632732Z",
+                        "finishedOn": "2025-11-16T09:23:51.777857Z"
+                    },
+                    {
+                        "id": "deea2e74-f5ee-4ee1-954a-d94924aa31f7",
+                        "summary": [],
+                        "actions": [
+                            {
+                                "args": {
+                                    "AddTrimMarks": true,
+                                    "SubscriberId": "4834db0f-cf25-4833-b123-ce3ff80008cc",
+                                    "UnitOfMeasure": 0
+                                },
+                                "results": {
+                                    "TrimAddedToPages": [
+                                        1,
+                                        2
+                                    ]
+                                },
+                                "validations": [],
+                                "unitOfMeasure": 0,
+                                "actionType": 5,
+                                "profileType": 1,
+                                "message": null,
+                                "level": 0,
+                                "name": null,
+                                "status": 1,
+                                "startedOn": "2025-11-16T09:23:51.8321476Z",
+                                "finishedOn": "2025-11-16T09:23:51.8782402Z"
+                            }
+                        ],
+                        "type": 11,
+                        "holdStatus": null,
+                        "result": null,
+                        "args": {
+                            "actions": [
+                                {
+                                    "profileLogId": "00000000-0000-0000-0000-000000000000",
+                                    "profileLog": null,
+                                    "profileActionId": "00000000-0000-0000-0000-000000000000",
+                                    "profileAction": null,
+                                    "status": 1,
+                                    "profileType": 1,
+                                    "actionType": 5,
+                                    "args": {
+                                        "AddTrimMarks": true,
+                                        "SubscriberId": "4834db0f-cf25-4833-b123-ce3ff80008cc",
+                                        "UnitOfMeasure": 0
+                                    },
+                                    "results": {
+                                        "TrimAddedToPages": [
+                                            1,
+                                            2
+                                        ]
+                                    },
+                                    "sequence": 0,
+                                    "validations": [],
+                                    "scheduleOn": "2025-11-16T09:23:51.8321473Z",
+                                    "startedOn": "2025-11-16T09:23:51.8321476Z",
+                                    "finishedOn": "2025-11-16T09:23:51.8782402Z",
+                                    "id": "00000000-0000-0000-0000-000000000000"
+                                }
+                            ],
+                            "profileType": 1,
+                            "validations": []
+                        },
+                        "name": "ActionStep",
+                        "status": 3,
+                        "startedOn": "2025-11-16T09:23:51.783828Z",
+                        "finishedOn": "2025-11-16T09:23:51.878261Z"
+                    },
+                    {
+                        "id": "0041c9dd-83a3-474f-8f3e-a7f00c63ff13",
+                        "summary": [
+                            {
+                                "actionType": 0,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 2,
+                                "result": 2
+                            },
+                            {
+                                "actionType": 6,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 8,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 9,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 10,
+                                "result": 0
+                            },
+                            {
+                                "actionType": 11,
+                                "result": 1
+                            },
+                            {
+                                "actionType": 13,
+                                "result": 0
+                            }
+                        ],
+                        "actions": [
+                            {
+                                "args": "{\"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1, \"FormFieldReporting\": 1, \"AnnotationReporting\": 1}",
+                                "results": "{\"HasFormField\": false, \"HasAnnotation\": false, \"IsPasswordProtected\": false}",
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 0,
+                                "profileType": 0,
+                                "message": null,
+                                "level": 0,
+                                "name": "DocumentIntegrity",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:23:51.931219Z",
+                                "finishedOn": "2025-11-16T09:23:52.399575Z"
+                            },
+                            {
+                                "args": "{\"Fail\": 150, \"Warn\": 250, \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1}",
+                                "results": [
+                                    {
+                                        "PageNumber": 1,
+                                        "Warn": 6,
+                                        "Fail": 4,
+                                        "Detail": [
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 234.27788493197244,
+                                                "X": 9.699980597251866,
+                                                "Y": 9.609464484151482,
+                                                "Width": 209.89743139364649,
+                                                "Height": 279.6102583034943,
+                                                "Compression": "Jpeg",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": 27.49605,
+                                                "YinPoints": 27.2394685,
+                                                "WidthinPoints": 594.9857539,
+                                                "HeightinPoints": 792.5972187,
+                                                "Id": 140
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 88.00539450034776,
+                                                "X": 154.30523112200802,
+                                                "Y": 242.13039786216993,
+                                                "Width": 64.93910175859455,
+                                                "Height": 64.93910175859455,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "Indexed",
+                                                "Type": 2,
+                                                "XinPoints": 437.4013234,
+                                                "YinPoints": 686.3549323,
+                                                "WidthinPoints": 184.07962480000003,
+                                                "HeightinPoints": 184.07962480000003,
+                                                "Id": 141
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 88.00539450034776,
+                                                "X": 154.30523112200802,
+                                                "Y": 306.3304631612368,
+                                                "Width": 64.93910175859455,
+                                                "Height": 64.93910175859455,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "Indexed",
+                                                "Type": 2,
+                                                "XinPoints": 437.4013234,
+                                                "YinPoints": 868.3396474,
+                                                "WidthinPoints": 184.07962480000003,
+                                                "HeightinPoints": 184.07962480000003,
+                                                "Id": 141
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 88.00539450034776,
+                                                "X": 220.15566376801365,
+                                                "Y": 242.13039786216993,
+                                                "Width": 64.93910175859455,
+                                                "Height": 64.93910175859455,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "Indexed",
+                                                "Type": 2,
+                                                "XinPoints": 624.0642522999999,
+                                                "YinPoints": 686.3549323,
+                                                "WidthinPoints": 184.07962480000003,
+                                                "HeightinPoints": 184.07962480000003,
+                                                "Id": 141
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 88.00539450034776,
+                                                "X": 220.15566376801365,
+                                                "Y": 306.3304631612368,
+                                                "Width": 64.93910175859455,
+                                                "Height": 64.93910175859455,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "Indexed",
+                                                "Type": 2,
+                                                "XinPoints": 624.0642522999999,
+                                                "YinPoints": 868.3396474,
+                                                "WidthinPoints": 184.07962480000003,
+                                                "HeightinPoints": 184.07962480000003,
+                                                "Id": 141
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 349.5242915524532,
+                                                "X": 209.36582163582804,
+                                                "Y": 44.88279731183744,
+                                                "Width": 20.459333286296356,
+                                                "Height": 48.25460134408127,
+                                                "Compression": "Jpeg",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 0,
+                                                "XinPoints": 593.4788262999999,
+                                                "YinPoints": 127.22702140000001,
+                                                "WidthinPoints": 57.99504909999996,
+                                                "HeightinPoints": 136.78490569999997,
+                                                "Id": 142
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 349.5242915524532,
+                                                "X": 209.57485252147532,
+                                                "Y": 44.88279731183744,
+                                                "Width": 20.459333286296356,
+                                                "Height": 48.25460134408127,
+                                                "Compression": "Jpeg",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 0,
+                                                "XinPoints": 594.0713557,
+                                                "YinPoints": 127.22702140000001,
+                                                "WidthinPoints": 57.99504909999996,
+                                                "HeightinPoints": 136.78490569999997,
+                                                "Id": 142
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 349.5242713637684,
+                                                "X": 219.68884020954968,
+                                                "Y": 31.763993544176536,
+                                                "Width": 3.1248139982008363,
+                                                "Height": 62.06025915015964,
+                                                "Compression": "Jpeg",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 0,
+                                                "XinPoints": 622.7409709,
+                                                "YinPoints": 90.03980430000001,
+                                                "WidthinPoints": 8.857754,
+                                                "HeightinPoints": 175.9191136,
+                                                "Id": 143
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 234.27788492154951,
+                                                "X": 9.699980597251866,
+                                                "Y": -269.819761593142,
+                                                "Width": 209.89743139364649,
+                                                "Height": 281.01969350713495,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": 27.49605,
+                                                "YinPoints": -764.8445872,
+                                                "WidthinPoints": 594.9857539,
+                                                "HeightinPoints": 796.5924742,
+                                                "Id": 144
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 234.27788492154951,
+                                                "X": -200.19745079639463,
+                                                "Y": 8.200029280510822,
+                                                "Width": 209.89743139364649,
+                                                "Height": 281.01969350713495,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": -567.4897039,
+                                                "YinPoints": 23.244213000000002,
+                                                "WidthinPoints": 594.9857539,
+                                                "HeightinPoints": 796.5924742,
+                                                "Id": 144
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 234.27788492154951,
+                                                "X": -200.19745079639463,
+                                                "Y": -269.819761593142,
+                                                "Width": 209.89743139364649,
+                                                "Height": 281.01969350713495,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": -567.4897039,
+                                                "YinPoints": -764.8445872,
+                                                "WidthinPoints": 594.9857539,
+                                                "HeightinPoints": 796.5924742,
+                                                "Id": 144
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 234.27788492154951,
+                                                "X": 219.80258469299565,
+                                                "Y": -269.819761593142,
+                                                "Width": 209.89743139364649,
+                                                "Height": 281.01969350713495,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": 623.0633967000001,
+                                                "YinPoints": -764.8445872,
+                                                "WidthinPoints": 594.9857539,
+                                                "HeightinPoints": 796.5924742,
+                                                "Id": 144
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 349.5242713924445,
+                                                "X": 155.9571843790239,
+                                                "Y": 30.38326389501349,
+                                                "Width": 63.73167128216889,
+                                                "Height": 49.342992926816365,
+                                                "Compression": "Jpeg",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 0,
+                                                "XinPoints": 442.0840327,
+                                                "YinPoints": 86.12591899999998,
+                                                "WidthinPoints": 180.65698200000003,
+                                                "HeightinPoints": 139.8701149,
+                                                "Id": 145
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 349.524271361956,
+                                                "X": 155.9571843790239,
+                                                "Y": 79.5082422521299,
+                                                "Width": 63.73167128216889,
+                                                "Height": 24.780501613955867,
+                                                "Compression": "Jpeg",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 0,
+                                                "XinPoints": 442.0840327,
+                                                "YinPoints": 225.37803890000004,
+                                                "WidthinPoints": 180.65698200000003,
+                                                "HeightinPoints": 70.2440489,
+                                                "Id": 146
+                                            },
+                                            {
+                                                "PageNumber": 1,
+                                                "Dpi": 234.27788493197244,
+                                                "X": 219.80258469299562,
+                                                "Y": 9.609464484151482,
+                                                "Width": 2.927288554142491,
+                                                "Height": 279.6102583034943,
+                                                "Compression": "Jpeg",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": 623.0633967,
+                                                "YinPoints": 27.2394685,
+                                                "WidthinPoints": 8.297838500000012,
+                                                "HeightinPoints": 792.5972187,
+                                                "Id": 147
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "PageNumber": 2,
+                                        "Warn": 6,
+                                        "Fail": 6,
+                                        "Detail": [
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 179.85619555853162,
+                                                "X": 9.700022930167746,
+                                                "Y": 126.49800238089358,
+                                                "Width": 209.999673233027,
+                                                "Height": 180.2014730100718,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": 27.496169999,
+                                                "YinPoints": 358.57756244899997,
+                                                "WidthinPoints": 595.27557373,
+                                                "HeightinPoints": 510.808105468,
+                                                "Id": 68
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 179.85619555853162,
+                                                "X": 9.700022930167746,
+                                                "Y": 306.7004857608523,
+                                                "Width": 209.999673233027,
+                                                "Height": 180.2014730100718,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": 27.496169999,
+                                                "YinPoints": 869.388531962,
+                                                "WidthinPoints": 595.27557373,
+                                                "HeightinPoints": 510.808105468,
+                                                "Id": 68
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 179.85619555853162,
+                                                "X": -200.29973496939658,
+                                                "Y": 126.49800238089358,
+                                                "Width": 209.999673233027,
+                                                "Height": 180.2014730100718,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": -567.779643731,
+                                                "YinPoints": 358.57756244899997,
+                                                "WidthinPoints": 595.27557373,
+                                                "HeightinPoints": 510.808105468,
+                                                "Id": 68
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 179.85619555853162,
+                                                "X": 219.70026498862296,
+                                                "Y": 126.49800238089358,
+                                                "Width": 209.999673233027,
+                                                "Height": 180.2014730100718,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": 622.77335615,
+                                                "YinPoints": 358.57756244899997,
+                                                "WidthinPoints": 595.27557373,
+                                                "HeightinPoints": 510.808105468,
+                                                "Id": 68
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 179.85619555853162,
+                                                "X": -200.29973496939658,
+                                                "Y": 306.7004857608523,
+                                                "Width": 209.999673233027,
+                                                "Height": 180.2014730100718,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": -567.779643731,
+                                                "YinPoints": 869.388531962,
+                                                "WidthinPoints": 595.27557373,
+                                                "HeightinPoints": 510.808105468,
+                                                "Id": 68
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 179.85619555853162,
+                                                "X": 219.70026498862296,
+                                                "Y": 306.7004857608523,
+                                                "Width": 209.999673233027,
+                                                "Height": 180.2014730100718,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 1,
+                                                "XinPoints": 622.77335615,
+                                                "YinPoints": 869.388531962,
+                                                "WidthinPoints": 595.27557373,
+                                                "HeightinPoints": 510.808105468,
+                                                "Id": 68
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 54.42856738600622,
+                                                "X": 9.699980596899088,
+                                                "Y": 8.199428500520346,
+                                                "Width": 209.999694764433,
+                                                "Height": 135.72209620235304,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 2,
+                                                "XinPoints": 27.496049999,
+                                                "YinPoints": 23.242509999,
+                                                "WidthinPoints": 595.275634764,
+                                                "HeightinPoints": 384.72464,
+                                                "Id": 69
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 54.42856738600622,
+                                                "X": 9.699980596899088,
+                                                "Y": -124.5215635090752,
+                                                "Width": 209.999694764433,
+                                                "Height": 135.72209620235304,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 2,
+                                                "XinPoints": 27.496049999,
+                                                "YinPoints": -352.975050001,
+                                                "WidthinPoints": 595.275634764,
+                                                "HeightinPoints": 384.72464,
+                                                "Id": 69
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 54.42856738600622,
+                                                "X": -200.29971416753392,
+                                                "Y": 8.199428500520346,
+                                                "Width": 209.999694764433,
+                                                "Height": 135.72209620235304,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 2,
+                                                "XinPoints": -567.779584765,
+                                                "YinPoints": 23.242509999,
+                                                "WidthinPoints": 595.275634764,
+                                                "HeightinPoints": 384.72464,
+                                                "Id": 69
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 54.42856738600622,
+                                                "X": 219.70028579048562,
+                                                "Y": 8.199428500520346,
+                                                "Width": 209.999694764433,
+                                                "Height": 135.72209620235304,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 2,
+                                                "XinPoints": 622.773415116,
+                                                "YinPoints": 23.242509999,
+                                                "WidthinPoints": 595.275634764,
+                                                "HeightinPoints": 384.72464,
+                                                "Id": 69
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 54.42856738600622,
+                                                "X": -200.29971416753392,
+                                                "Y": -124.5215635090752,
+                                                "Width": 209.999694764433,
+                                                "Height": 135.72209620235304,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 2,
+                                                "XinPoints": -567.779584765,
+                                                "YinPoints": -352.975050001,
+                                                "WidthinPoints": 595.275634764,
+                                                "HeightinPoints": 384.72464,
+                                                "Id": 69
+                                            },
+                                            {
+                                                "PageNumber": 2,
+                                                "Dpi": 54.42856738600622,
+                                                "X": 219.70028579048562,
+                                                "Y": -124.5215635090752,
+                                                "Width": 209.999694764433,
+                                                "Height": 135.72209620235304,
+                                                "Compression": "Flate",
+                                                "ColorSpace": "DeviceCMYK",
+                                                "Type": 2,
+                                                "XinPoints": 622.773415116,
+                                                "YinPoints": -352.975050001,
+                                                "WidthinPoints": 595.275634764,
+                                                "HeightinPoints": 384.72464,
+                                                "Id": 69
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "validations": "[{\"Message\":\"Image resolution is 179.86 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":9.700022930167746,\"Y\":126.49800238089358,\"Id\":68,\"Dpi\":179.85619555853162,\"Type\":1,\"Width\":209.999673233027,\"Height\":180.2014730100718,\"XinPoints\":27.496169999,\"YinPoints\":358.57756244899997,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.27557373,\"HeightinPoints\":510.808105468},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 179.86 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":9.700022930167746,\"Y\":306.7004857608523,\"Id\":68,\"Dpi\":179.85619555853162,\"Type\":1,\"Width\":209.999673233027,\"Height\":180.2014730100718,\"XinPoints\":27.496169999,\"YinPoints\":869.388531962,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.27557373,\"HeightinPoints\":510.808105468},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 179.86 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":-200.29973496939658,\"Y\":126.49800238089358,\"Id\":68,\"Dpi\":179.85619555853162,\"Type\":1,\"Width\":209.999673233027,\"Height\":180.2014730100718,\"XinPoints\":-567.779643731,\"YinPoints\":358.57756244899997,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.27557373,\"HeightinPoints\":510.808105468},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 179.86 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":219.70026498862296,\"Y\":126.49800238089358,\"Id\":68,\"Dpi\":179.85619555853162,\"Type\":1,\"Width\":209.999673233027,\"Height\":180.2014730100718,\"XinPoints\":622.77335615,\"YinPoints\":358.57756244899997,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.27557373,\"HeightinPoints\":510.808105468},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 179.86 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":-200.29973496939658,\"Y\":306.7004857608523,\"Id\":68,\"Dpi\":179.85619555853162,\"Type\":1,\"Width\":209.999673233027,\"Height\":180.2014730100718,\"XinPoints\":-567.779643731,\"YinPoints\":869.388531962,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.27557373,\"HeightinPoints\":510.808105468},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 179.86 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":219.70026498862296,\"Y\":306.7004857608523,\"Id\":68,\"Dpi\":179.85619555853162,\"Type\":1,\"Width\":209.999673233027,\"Height\":180.2014730100718,\"XinPoints\":622.77335615,\"YinPoints\":869.388531962,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.27557373,\"HeightinPoints\":510.808105468},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 54.43 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":9.699980596899088,\"Y\":8.199428500520346,\"Id\":69,\"Dpi\":54.42856738600622,\"Type\":2,\"Width\":209.999694764433,\"Height\":135.72209620235304,\"XinPoints\":27.496049999,\"YinPoints\":23.242509999,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.275634764,\"HeightinPoints\":384.72464},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 54.43 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":9.699980596899088,\"Y\":-124.5215635090752,\"Id\":69,\"Dpi\":54.42856738600622,\"Type\":2,\"Width\":209.999694764433,\"Height\":135.72209620235304,\"XinPoints\":27.496049999,\"YinPoints\":-352.975050001,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.275634764,\"HeightinPoints\":384.72464},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 54.43 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":-200.29971416753392,\"Y\":8.199428500520346,\"Id\":69,\"Dpi\":54.42856738600622,\"Type\":2,\"Width\":209.999694764433,\"Height\":135.72209620235304,\"XinPoints\":-567.779584765,\"YinPoints\":23.242509999,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.275634764,\"HeightinPoints\":384.72464},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 54.43 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":219.70028579048562,\"Y\":8.199428500520346,\"Id\":69,\"Dpi\":54.42856738600622,\"Type\":2,\"Width\":209.999694764433,\"Height\":135.72209620235304,\"XinPoints\":622.773415116,\"YinPoints\":23.242509999,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.275634764,\"HeightinPoints\":384.72464},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 54.43 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":-200.29971416753392,\"Y\":-124.5215635090752,\"Id\":69,\"Dpi\":54.42856738600622,\"Type\":2,\"Width\":209.999694764433,\"Height\":135.72209620235304,\"XinPoints\":-567.779584765,\"YinPoints\":-352.975050001,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.275634764,\"HeightinPoints\":384.72464},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 54.43 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":219.70028579048562,\"Y\":-124.5215635090752,\"Id\":69,\"Dpi\":54.42856738600622,\"Type\":2,\"Width\":209.999694764433,\"Height\":135.72209620235304,\"XinPoints\":622.773415116,\"YinPoints\":-352.975050001,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":2,\"Compression\":\"Flate\",\"WidthinPoints\":595.275634764,\"HeightinPoints\":384.72464},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 234.28 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":9.699980597251866,\"Y\":9.609464484151482,\"Id\":140,\"Dpi\":234.27788493197244,\"Type\":1,\"Width\":209.89743139364649,\"Height\":279.6102583034943,\"XinPoints\":27.49605,\"YinPoints\":27.2394685,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":1,\"Compression\":\"Jpeg\",\"WidthinPoints\":594.9857539,\"HeightinPoints\":792.5972187},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 88.01 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":154.30523112200802,\"Y\":242.13039786216993,\"Id\":141,\"Dpi\":88.00539450034776,\"Type\":2,\"Width\":64.93910175859455,\"Height\":64.93910175859455,\"XinPoints\":437.4013234,\"YinPoints\":686.3549323,\"ColorSpace\":\"Indexed\",\"PageNumber\":1,\"Compression\":\"Flate\",\"WidthinPoints\":184.07962480000003,\"HeightinPoints\":184.07962480000003},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 88.01 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":154.30523112200802,\"Y\":306.3304631612368,\"Id\":141,\"Dpi\":88.00539450034776,\"Type\":2,\"Width\":64.93910175859455,\"Height\":64.93910175859455,\"XinPoints\":437.4013234,\"YinPoints\":868.3396474,\"ColorSpace\":\"Indexed\",\"PageNumber\":1,\"Compression\":\"Flate\",\"WidthinPoints\":184.07962480000003,\"HeightinPoints\":184.07962480000003},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 88.01 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":220.15566376801365,\"Y\":242.13039786216993,\"Id\":141,\"Dpi\":88.00539450034776,\"Type\":2,\"Width\":64.93910175859455,\"Height\":64.93910175859455,\"XinPoints\":624.0642522999999,\"YinPoints\":686.3549323,\"ColorSpace\":\"Indexed\",\"PageNumber\":1,\"Compression\":\"Flate\",\"WidthinPoints\":184.07962480000003,\"HeightinPoints\":184.07962480000003},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 88.01 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":2,\"Data\":{\"X\":220.15566376801365,\"Y\":306.3304631612368,\"Id\":141,\"Dpi\":88.00539450034776,\"Type\":2,\"Width\":64.93910175859455,\"Height\":64.93910175859455,\"XinPoints\":624.0642522999999,\"YinPoints\":868.3396474,\"ColorSpace\":\"Indexed\",\"PageNumber\":1,\"Compression\":\"Flate\",\"WidthinPoints\":184.07962480000003,\"HeightinPoints\":184.07962480000003},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 234.28 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":9.699980597251866,\"Y\":-269.819761593142,\"Id\":144,\"Dpi\":234.27788492154951,\"Type\":1,\"Width\":209.89743139364649,\"Height\":281.01969350713495,\"XinPoints\":27.49605,\"YinPoints\":-764.8445872,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":1,\"Compression\":\"Flate\",\"WidthinPoints\":594.9857539,\"HeightinPoints\":796.5924742},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 234.28 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":-200.19745079639463,\"Y\":8.200029280510822,\"Id\":144,\"Dpi\":234.27788492154951,\"Type\":1,\"Width\":209.89743139364649,\"Height\":281.01969350713495,\"XinPoints\":-567.4897039,\"YinPoints\":23.244213000000002,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":1,\"Compression\":\"Flate\",\"WidthinPoints\":594.9857539,\"HeightinPoints\":796.5924742},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 234.28 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":-200.19745079639463,\"Y\":-269.819761593142,\"Id\":144,\"Dpi\":234.27788492154951,\"Type\":1,\"Width\":209.89743139364649,\"Height\":281.01969350713495,\"XinPoints\":-567.4897039,\"YinPoints\":-764.8445872,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":1,\"Compression\":\"Flate\",\"WidthinPoints\":594.9857539,\"HeightinPoints\":796.5924742},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 234.28 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":219.80258469299565,\"Y\":-269.819761593142,\"Id\":144,\"Dpi\":234.27788492154951,\"Type\":1,\"Width\":209.89743139364649,\"Height\":281.01969350713495,\"XinPoints\":623.0633967000001,\"YinPoints\":-764.8445872,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":1,\"Compression\":\"Flate\",\"WidthinPoints\":594.9857539,\"HeightinPoints\":796.5924742},\"FieldName\":null,\"Type\":0},{\"Message\":\"Image resolution is 234.28 and didn't pass the preflight check. Warn: 250. Fail: 150.\",\"Level\":1,\"Data\":{\"X\":219.80258469299562,\"Y\":9.609464484151482,\"Id\":147,\"Dpi\":234.27788493197244,\"Type\":1,\"Width\":2.927288554142491,\"Height\":279.6102583034943,\"XinPoints\":623.0633967,\"YinPoints\":27.2394685,\"ColorSpace\":\"DeviceCMYK\",\"PageNumber\":1,\"Compression\":\"Jpeg\",\"WidthinPoints\":8.297838500000012,\"HeightinPoints\":792.5972187},\"FieldName\":null,\"Type\":0}]",
+                                "unitOfMeasure": 1,
+                                "actionType": 2,
+                                "profileType": 0,
+                                "message": null,
+                                "level": 0,
+                                "name": "ImageResolution",
+                                "status": 4,
+                                "startedOn": "2025-11-16T09:23:52.419839Z",
+                                "finishedOn": "2025-11-16T09:23:52.558237Z"
+                            },
+                            {
+                                "args": "{\"Reporting\": 1, \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1}",
+                                "results": "{\"Pages\": [{\"PageNumber\": 1, \"PageOrientation\": 0}, {\"PageNumber\": 2, \"PageOrientation\": 0}], \"AllInTheSameOrientation\": true}",
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 6,
+                                "profileType": 0,
+                                "message": null,
+                                "level": 0,
+                                "name": "PageOrientation",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:23:52.580855Z",
+                                "finishedOn": "2025-11-16T09:23:52.696601Z"
+                            },
+                            {
+                                "args": "{\"Required\": false, \"Reporting\": 2, \"MinimunSize\": 3, \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1}",
+                                "results": "{\"Pages\": []}",
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 8,
+                                "profileType": 0,
+                                "message": null,
+                                "level": 0,
+                                "name": "Bleed",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:23:52.717067Z",
+                                "finishedOn": "2025-11-16T09:23:52.83725Z"
+                            },
+                            {
+                                "args": "{\"Colors\": [], \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1, \"RequiredColors\": [], \"ColorsReporting\": 1, \"ColorListCondition\": 0, \"RequireColorsdReporting\": 2}",
+                                "results": "{\"Pages\": [], \"RequiredColors\": [], \"RequiredColorsNotFound\": null}",
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 9,
+                                "profileType": 0,
+                                "message": null,
+                                "level": 0,
+                                "name": "SpotColors",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:23:52.857361Z",
+                                "finishedOn": "2025-11-16T09:23:52.994619Z"
+                            },
+                            {
+                                "args": "{\"FontNames\": [], \"FontTypes\": [4, 3, 2, 1, 0], \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1, \"EmbedReporting\": 2, \"MinimunFontSize\": 4, \"FontSizeReporting\": 1, \"FontNamesReporting\": null, \"FontTypesReporting\": 1, \"FontNameListConsentType\": 0, \"FontTypeListConsentType\": 0}",
+                                "results": "{\"FontNames\": [], \"FontTypes\": [], \"EmbeddedFonts\": [], \"FontSizeResults\": []}",
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 10,
+                                "profileType": 0,
+                                "message": null,
+                                "level": 0,
+                                "name": "Fonts",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:23:53.0147Z",
+                                "finishedOn": "2025-11-16T09:23:53.153164Z"
+                            },
+                            {
+                                "args": "{\"Reporting\": 1, \"MaximumCmyk\": 300, \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1}",
+                                "results": "{\"Pages\": [{\"Page\": 1, \"Color\": \"1 1 1 1\"}, {\"Page\": 1, \"Color\": \"1 1 1 1\"}, {\"Page\": 1, \"Color\": \"1 1 1 1\"}, {\"Page\": 1, \"Color\": \"1 1 1 1\"}, {\"Page\": 1, \"Color\": \"1 1 1 1\"}, {\"Page\": 1, \"Color\": \"1 1 1 1\"}, {\"Page\": 1, \"Color\": \"1 1 1 1\"}, {\"Page\": 1, \"Color\": \"1 1 1 1\"}, {\"Page\": 2, \"Color\": \"1 1 1 1\"}, {\"Page\": 2, \"Color\": \"1 1 1 1\"}, {\"Page\": 2, \"Color\": \"1 1 1 1\"}, {\"Page\": 2, \"Color\": \"1 1 1 1\"}, {\"Page\": 2, \"Color\": \"1 1 1 1\"}, {\"Page\": 2, \"Color\": \"1 1 1 1\"}, {\"Page\": 2, \"Color\": \"1 1 1 1\"}, {\"Page\": 2, \"Color\": \"1 1 1 1\"}]}",
+                                "validations": "[{\"Message\":\"Rich black detected.\",\"Level\":1,\"Data\":[{\"Page\":1,\"Color\":\"1 1 1 1\"},{\"Page\":1,\"Color\":\"1 1 1 1\"},{\"Page\":1,\"Color\":\"1 1 1 1\"},{\"Page\":1,\"Color\":\"1 1 1 1\"},{\"Page\":1,\"Color\":\"1 1 1 1\"},{\"Page\":1,\"Color\":\"1 1 1 1\"},{\"Page\":1,\"Color\":\"1 1 1 1\"},{\"Page\":1,\"Color\":\"1 1 1 1\"},{\"Page\":2,\"Color\":\"1 1 1 1\"},{\"Page\":2,\"Color\":\"1 1 1 1\"},{\"Page\":2,\"Color\":\"1 1 1 1\"},{\"Page\":2,\"Color\":\"1 1 1 1\"},{\"Page\":2,\"Color\":\"1 1 1 1\"},{\"Page\":2,\"Color\":\"1 1 1 1\"},{\"Page\":2,\"Color\":\"1 1 1 1\"},{\"Page\":2,\"Color\":\"1 1 1 1\"}],\"FieldName\":null,\"Type\":0}]",
+                                "unitOfMeasure": 1,
+                                "actionType": 11,
+                                "profileType": 0,
+                                "message": null,
+                                "level": 0,
+                                "name": "RichBlack",
+                                "status": 2,
+                                "startedOn": "2025-11-16T09:23:53.173471Z",
+                                "finishedOn": "2025-11-16T09:23:53.318607Z"
+                            },
+                            {
+                                "args": "{\"Reporting\": 2, \"SubscriberId\": \"4834db0f-cf25-4833-b123-ce3ff80008cc\", \"UnitOfMeasure\": 1, \"DistanceFromEdge\": 3}",
+                                "results": "{\"TextEdgeResults\": [], \"ImageEdgeResults\": []}",
+                                "validations": "[]",
+                                "unitOfMeasure": 1,
+                                "actionType": 13,
+                                "profileType": 0,
+                                "message": null,
+                                "level": 0,
+                                "name": "SafetyDistance",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:23:53.338981Z",
+                                "finishedOn": "2025-11-16T09:23:53.491953Z"
+                            }
+                        ],
+                        "type": 3,
+                        "holdStatus": null,
+                        "result": null,
+                        "args": null,
+                        "name": "Preflight",
+                        "status": 4,
+                        "startedOn": "2025-11-16T09:23:51.884136Z",
+                        "finishedOn": "2025-11-16T09:23:53.49505Z"
+                    },
+                    {
+                        "id": "0e3c30eb-d411-463c-9b11-eb31d22d76a2",
+                        "summary": [],
+                        "actions": [
+                            {
+                                "args": "{\"Pages\": [{\"Width\": 650.26805, \"Height\": 896.883, \"Issues\": [{\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@234.28|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.04228417804011746, \"Y\": 0.0303712619148763, \"Width\": 0.9149853724168056, \"Height\": 0.8837242078398185}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@88.01|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.6726477233503938, \"Y\": 0.7652669660368185, \"Width\": 0.28308268382553936, \"Height\": 0.20524374394430492}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@88.01|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.6726477233503938, \"Y\": 0.9681749429970241, \"Width\": 0.28308268382553936, \"Height\": 0.20524374394430492}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@88.01|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.95970308290558, \"Y\": 0.7652669660368185, \"Width\": 0.28308268382553936, \"Height\": 0.20524374394430492}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@88.01|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.95970308290558, \"Y\": 0.9681749429970241, \"Width\": 0.28308268382553936, \"Height\": 0.20524374394430492}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@234.28|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.04228417804011746, \"Y\": -0.8527807832236757, \"Width\": 0.9149853724168056, \"Height\": 0.8881788083841481}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@234.28|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": -0.8727011943766881, \"Y\": 0.02591666137054666, \"Width\": 0.9149853724168056, \"Height\": 0.8881788083841481}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@234.28|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": -0.8727011943766881, \"Y\": -0.8527807832236757, \"Width\": 0.9149853724168056, \"Height\": 0.8881788083841481}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@234.28|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.9581639397783731, \"Y\": -0.8527807832236757, \"Width\": 0.9149853724168056, \"Height\": 0.8881788083841481}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@234.28|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.9581639397783729, \"Y\": 0.0303712619148763, \"Width\": 0.012760643091721962, \"Height\": 0.8837242078398185}}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Resize Pages - Details.\", \"Message\": \"@@fix_resize_pages_detail@@1|[0 0 104.99991180569029 148.49981479194963]|[0 0 210.00000000000003 297]\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Add Bleeds - Details.\", \"Message\": \"@@fix_add_bleeds_success@@\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Add Bleeds - Details.\", \"Message\": \"@@fix_add_bleeds_success@@\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}], \"CropBox\": {\"X\": 0, \"Y\": 0, \"Width\": 1, \"Height\": 1}, \"TrimBox\": {\"X\": 0.04228417804011746, \"Y\": 0.03065734326550955, \"Width\": 0.9154317208111332, \"Height\": 0.9386854249662443}, \"BleedBox\": {\"X\": 0.029206571044048682, \"Y\": 0.021175671743137066, \"Width\": 0.9415870116946389, \"Height\": 0.9576488237596207}, \"MediaBox\": {\"X\": 0, \"Y\": 0, \"Width\": 1, \"Height\": 1}, \"PageImage\": \"https://ams.api.pdf2press.aleyant.com/image/file/7618e254-2e77-41bc-8bdb-71559fcb7bf0\", \"PageNumber\": 1, \"PageThumbnail\": \"https://ams.api.pdf2press.aleyant.com/image/file/521e0e0e-b3d9-430f-bbd9-52635bccb361\"}, {\"Width\": 650.26805, \"Height\": 896.883, \"Issues\": [{\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@179.86|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.04228436257786308, \"Y\": 0.39980416893730836, \"Width\": 0.9154310652814636, \"Height\": 0.5695370583097238}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@179.86|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.04228436257786308, \"Y\": 0.9693444205788269, \"Width\": 0.9154310652814636, \"Height\": 0.5695370583097238}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@179.86|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": -0.8731470717821673, \"Y\": 0.39980416893730836, \"Width\": 0.9154310652814636, \"Height\": 0.5695370583097238}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@179.86|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.9577179074844597, \"Y\": 0.39980416893730836, \"Width\": 0.9154310652814636, \"Height\": 0.5695370583097238}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@179.86|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": -0.8731470717821673, \"Y\": 0.9693444205788269, \"Width\": 0.9154310652814636, \"Height\": 0.5695370583097238}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@179.86|250|150\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.9577179074844597, \"Y\": 0.9693444205788269, \"Width\": 0.9154310652814636, \"Height\": 0.5695370583097238}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@54.43|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.04228417803857963, \"Y\": 0.02591476257103769, \"Width\": 0.9154311591412186, \"Height\": 0.4289574448395164}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@54.43|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.04228417803857963, \"Y\": -0.39355752088176493, \"Width\": 0.9154311591412186, \"Height\": 0.4289574448395164}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@54.43|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": -0.8731469811026391, \"Y\": 0.02591476257103769, \"Width\": 0.9154311591412186, \"Height\": 0.4289574448395164}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@54.43|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.957717998163988, \"Y\": 0.02591476257103769, \"Width\": 0.9154311591412186, \"Height\": 0.4289574448395164}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@54.43|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": -0.8731469811026391, \"Y\": -0.39355752088176493, \"Width\": 0.9154311591412186, \"Height\": 0.4289574448395164}}, {\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_didnt_pass_preflight_check@@54.43|250|150\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": {\"X\": 0.957717998163988, \"Y\": -0.39355752088176493, \"Width\": 0.9154311591412186, \"Height\": 0.4289574448395164}}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"@@title_rich_black@@\", \"Message\": \"@@message_rich_black@@\", \"IssueKind\": 0, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Resize Pages - Details.\", \"Message\": \"@@fix_resize_pages_detail@@2|[0 0 104.99991180569029 148.49981479194963]|[0 0 210.00000000000003 297]\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Add Bleeds - Details.\", \"Message\": \"@@fix_add_bleeds_success@@\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Add Bleeds - Details.\", \"Message\": \"@@fix_add_bleeds_success@@\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}], \"CropBox\": {\"X\": 0, \"Y\": 0, \"Width\": 1, \"Height\": 1}, \"TrimBox\": {\"X\": 0.04228417804011746, \"Y\": 0.03065734326550955, \"Width\": 0.9154317208111332, \"Height\": 0.9386854249662443}, \"BleedBox\": {\"X\": 0.029206571044048682, \"Y\": 0.021175671743137066, \"Width\": 0.9415870116946389, \"Height\": 0.9576488237596207}, \"MediaBox\": {\"X\": 0, \"Y\": 0, \"Width\": 1, \"Height\": 1}, \"PageImage\": \"https://ams.api.pdf2press.aleyant.com/image/file/d86be6a3-9685-404f-b1fb-38c2d3f302ad\", \"PageNumber\": 2, \"PageThumbnail\": \"https://ams.api.pdf2press.aleyant.com/image/file/85b5f7a3-e0e4-45b1-ae64-4ec46c3ee91e\"}], \"Status\": null, \"Document\": {\"Issues\": [{\"Data\": null, \"Title\": \"@@title_image_resolution@@\", \"Message\": \"@@message_image_resolution_found_on_pages@@1, 2\", \"IssueKind\": 1, \"IssueType\": 0, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Resize Pages.\", \"Message\": \"@@fix_resize_pages_success@@210|297|Stretching\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Add Bleeds.\", \"Message\": \"@@fix_add_bleeds_summary@@3\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Fonts Outline.\", \"Message\": \"@@fix_fonts_outline_success@@\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Add Bleeds.\", \"Message\": \"@@fix_add_bleeds_summary@@3 millimeters\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Add Trim Marks.\", \"Message\": \"@@fix_trim_marks_success@@\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Colorspace Transformation.\", \"Message\": \"@@fix_colorspace_success@@CoatedFOGRA39.icc|1|0\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Flattening Transparencies.\", \"Message\": \"@@fix_flattening_success@@ Details: Processed successfully\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}, {\"Data\": null, \"Title\": \"Add Trim Marks.\", \"Message\": \"@@fix_trim_marks_success@@\", \"IssueKind\": 2, \"IssueType\": 1, \"Coordinate\": null}], \"PdfInfo\": {\"Pages\": [{\"CropBox\": {\"X\": 0, \"Y\": 0, \"Width\": 650.26805, \"Height\": 896.883}, \"TrimBox\": {\"X\": 27.49605, \"Y\": 27.49605, \"Width\": 595.2760000000001, \"Height\": 841.8910000000001}, \"BleedBox\": {\"X\": 18.9921, \"Y\": 18.9921, \"Width\": 612.28395, \"Height\": 858.8989499999999}, \"MediaBox\": {\"X\": 0, \"Y\": 0, \"Width\": 650.26805, \"Height\": 896.883}, \"UserUnit\": 1, \"PageNumber\": 1, \"ThumbnailUrl\": \"https://ams.api.pdf2press.aleyant.com/image/file/521e0e0e-b3d9-430f-bbd9-52635bccb361\", \"ThumbnailLargeUrl\": \"https://ams.api.pdf2press.aleyant.com/image/file/7618e254-2e77-41bc-8bdb-71559fcb7bf0\"}, {\"CropBox\": {\"X\": 0, \"Y\": 0, \"Width\": 650.26805, \"Height\": 896.883}, \"TrimBox\": {\"X\": 27.49605, \"Y\": 27.49605, \"Width\": 595.2760000000001, \"Height\": 841.8910000000001}, \"BleedBox\": {\"X\": 18.9921, \"Y\": 18.9921, \"Width\": 612.28395, \"Height\": 858.8989499999999}, \"MediaBox\": {\"X\": 0, \"Y\": 0, \"Width\": 650.26805, \"Height\": 896.883}, \"UserUnit\": 1, \"PageNumber\": 2, \"ThumbnailUrl\": \"https://ams.api.pdf2press.aleyant.com/image/file/85b5f7a3-e0e4-45b1-ae64-4ec46c3ee91e\", \"ThumbnailLargeUrl\": \"https://ams.api.pdf2press.aleyant.com/image/file/d86be6a3-9685-404f-b1fb-38c2d3f302ad\"}], \"Title\": \"A6 verticale\", \"Author\": \"\", \"FileId\": \"bd4a652a-c9ab-493b-92c2-be969a03f89f\", \"Creator\": \"Adobe Illustrator 27.0 (Windows)\", \"Subject\": \"\", \"Version\": \"16\", \"FileName\": \"a6verticale.pdf\", \"FileSize\": \"13.35 MB\", \"Keywords\": \"\", \"Producer\": \"Aleyant Systems, LLC using ABCpdf\", \"PageCount\": 2, \"ThumbJobId\": \"2099411\", \"CreatedDate\": \"2024-12-01T17:47:44Z\", \"ModifiedDate\": \"2025-11-16T01:23:50-08:00\", \"FileSizeBytes\": 14000088, \"PdfConformance\": \"\", \"RuntimeVariables\": {\"FileInfo.FileInfo.FileName\": {\"Value\": \"a6verticale.pdf\", \"FieldType\": 1, \"FieldLabel\": \"The name of the original file\"}, \"FileInfo.FileInfo.FileSize\": {\"Value\": 13.351524353027344, \"FieldType\": 0, \"FieldLabel\": \"The file size in MB\"}, \"FileInfo.FileInfo.PageCount\": {\"Value\": 2, \"FieldType\": 0, \"FieldLabel\": \"The quantity of pages\"}, \"FileInfo.FileInfo.PageWidth\": {\"Value\": 650.26805, \"FieldType\": 0, \"FieldLabel\": \"The Width of the first page\"}, \"FileInfo.FileInfo.PageHeight\": {\"Value\": 896.883, \"FieldType\": 0, \"FieldLabel\": \"The height of the first page\"}, \"FileInfo.FileInfo.TrimboxWidth\": {\"Value\": 595.2760000000001, \"FieldType\": 0, \"FieldLabel\": \"The Trimbox Width of the first page\"}, \"FileInfo.FileInfo.TrimboxHeight\": {\"Value\": 841.8910000000001, \"FieldType\": 0, \"FieldLabel\": \"The Trimbox height of the first page\"}, \"FileInfo.FileInfo.AllPagesSameDimension\": {\"Value\": true, \"FieldType\": 1, \"FieldLabel\": \"If all the pages are in the same dimension\"}}}, \"FileName\": \"a6verticale.pdf\"}, \"IsDeleted\": false, \"Imposition\": null, \"ThumbailJobId\": \"2099411\", \"NoteIsMandatory\": true, \"ThumbnailStatus\": null, \"ProofingOptionType\": 2}",
+                                "results": "{\"Validations\": [{\"Data\": [null], \"Type\": 1, \"Level\": 1, \"Message\": \"@@The proofing email wasn't sent because the \\\"Send to\\\" list is empty.@@\", \"FieldName\": null}]}",
+                                "validations": {
+                                    "message": "The proofing email wasn't sent because the \"Send to\" list is empty.",
+                                    "level": 1,
+                                    "data": [
+                                        null
+                                    ],
+                                    "fieldName": null,
+                                    "type": 1
+                                },
+                                "unitOfMeasure": null,
+                                "actionType": 0,
+                                "profileType": 0,
+                                "message": null,
+                                "level": 0,
+                                "name": "Proofing",
+                                "status": 3,
+                                "startedOn": "2025-11-16T09:23:53.680378Z",
+                                "finishedOn": null
+                            }
+                        ],
+                        "type": 7,
+                        "holdStatus": "{\"HoldOn\": \"2025-11-16T09:23:53.6803786Z\", \"PdfInfo\": {\"Pages\": [{\"CropBox\": {\"X\": 0, \"Y\": 0, \"Width\": 650.26805, \"Height\": 896.883}, \"TrimBox\": {\"X\": 27.49605, \"Y\": 27.49605, \"Width\": 595.2760000000001, \"Height\": 841.8910000000001}, \"BleedBox\": {\"X\": 18.9921, \"Y\": 18.9921, \"Width\": 612.28395, \"Height\": 858.8989499999999}, \"MediaBox\": {\"X\": 0, \"Y\": 0, \"Width\": 650.26805, \"Height\": 896.883}, \"UserUnit\": 1, \"PageNumber\": 1, \"ThumbnailUrl\": \"https://ams.api.pdf2press.aleyant.com/image/file/521e0e0e-b3d9-430f-bbd9-52635bccb361\", \"ThumbnailLargeUrl\": \"https://ams.api.pdf2press.aleyant.com/image/file/7618e254-2e77-41bc-8bdb-71559fcb7bf0\"}, {\"CropBox\": {\"X\": 0, \"Y\": 0, \"Width\": 650.26805, \"Height\": 896.883}, \"TrimBox\": {\"X\": 27.49605, \"Y\": 27.49605, \"Width\": 595.2760000000001, \"Height\": 841.8910000000001}, \"BleedBox\": {\"X\": 18.9921, \"Y\": 18.9921, \"Width\": 612.28395, \"Height\": 858.8989499999999}, \"MediaBox\": {\"X\": 0, \"Y\": 0, \"Width\": 650.26805, \"Height\": 896.883}, \"UserUnit\": 1, \"PageNumber\": 2, \"ThumbnailUrl\": \"https://ams.api.pdf2press.aleyant.com/image/file/85b5f7a3-e0e4-45b1-ae64-4ec46c3ee91e\", \"ThumbnailLargeUrl\": \"https://ams.api.pdf2press.aleyant.com/image/file/d86be6a3-9685-404f-b1fb-38c2d3f302ad\"}], \"Title\": \"A6 verticale\", \"Author\": \"\", \"FileId\": \"bd4a652a-c9ab-493b-92c2-be969a03f89f\", \"Creator\": \"Adobe Illustrator 27.0 (Windows)\", \"Subject\": \"\", \"Version\": \"16\", \"FileName\": \"a6verticale.pdf\", \"FileSize\": \"13.35 MB\", \"Keywords\": \"\", \"Producer\": \"Aleyant Systems, LLC using ABCpdf\", \"PageCount\": 2, \"ThumbJobId\": \"2099411\", \"CreatedDate\": \"2024-12-01T17:47:44Z\", \"ModifiedDate\": \"2025-11-16T01:23:50-08:00\", \"FileSizeBytes\": 14000088, \"PdfConformance\": \"\", \"RuntimeVariables\": {\"FileInfo.FileInfo.FileName\": {\"Value\": \"a6verticale.pdf\", \"FieldType\": 1, \"FieldLabel\": \"The name of the original file\"}, \"FileInfo.FileInfo.FileSize\": {\"Value\": 13.351524353027344, \"FieldType\": 0, \"FieldLabel\": \"The file size in MB\"}, \"FileInfo.FileInfo.PageCount\": {\"Value\": 2, \"FieldType\": 0, \"FieldLabel\": \"The quantity of pages\"}, \"FileInfo.FileInfo.PageWidth\": {\"Value\": 650.26805, \"FieldType\": 0, \"FieldLabel\": \"The Width of the first page\"}, \"FileInfo.FileInfo.PageHeight\": {\"Value\": 896.883, \"FieldType\": 0, \"FieldLabel\": \"The height of the first page\"}, \"FileInfo.FileInfo.TrimboxWidth\": {\"Value\": 595.2760000000001, \"FieldType\": 0, \"FieldLabel\": \"The Trimbox Width of the first page\"}, \"FileInfo.FileInfo.TrimboxHeight\": {\"Value\": 841.8910000000001, \"FieldType\": 0, \"FieldLabel\": \"The Trimbox height of the first page\"}, \"FileInfo.FileInfo.AllPagesSameDimension\": {\"Value\": true, \"FieldType\": 1, \"FieldLabel\": \"If all the pages are in the same dimension\"}}}, \"ResumedOn\": null, \"WorkflowSessionId\": \"0885bb13-d2d0-4a44-8e2a-4947870bcc76\", \"WorkflowProofStepId\": \"0e3c30eb-d411-463c-9b11-eb31d22d76a2\"}",
+                        "result": {
+                            "from": 0,
+                            "newSessionId": null,
+                            "notes": null,
+                            "action": null,
+                            "proofStepId": null,
+                            "proofStatus": null,
+                            "userId": null,
+                            "userName": null,
+                            "canceledByOperator": false
+                        },
+                        "args": {
+                            "document": null,
+                            "pages": null,
+                            "status": null,
+                            "thumbnailStatus": null,
+                            "thumbailJobId": null,
+                            "isDeleted": false,
+                            "imposition": null,
+                            "proofingOptionType": 2,
+                            "noteIsMandatory": true
+                        },
+                        "name": "Proof",
+                        "status": 5,
+                        "startedOn": "2025-11-16T09:23:53.680378Z",
+                        "finishedOn": null
+                    }
+                ],
+                "message": null,
+                "pdfInfo": {
+                    "pageCount": 2,
+                    "createdDate": "2024-12-01T17:47:44Z",
+                    "modifiedDate": "2025-02-21T15:39:02Z",
+                    "producer": "Adobe PDF library 16.07",
+                    "author": "",
+                    "creator": "Adobe Illustrator 27.0 (Windows)",
+                    "title": "A6 verticale",
+                    "subject": "",
+                    "keywords": "",
+                    "version": "16",
+                    "pdfConformance": "",
+                    "pages": [
+                        {
+                            "pageNumber": 1,
+                            "userUnit": 1.0,
+                            "trimBox": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "width": 297.638,
+                                "height": 420.945
+                            },
+                            "cropBox": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "width": 297.638,
+                                "height": 420.945
+                            },
+                            "bleedBox": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "width": 297.638,
+                                "height": 420.945
+                            },
+                            "mediaBox": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "width": 297.638,
+                                "height": 420.945
+                            },
+                            "thumbnailUrl": "https://ams.api.pdf2press.aleyant.com/image/file/77b0b4f3-5952-46dc-89a4-2d76c3743790",
+                            "thumbnailLargeUrl": "https://ams.api.pdf2press.aleyant.com/image/file/191d858b-6758-4628-b06a-fdae4334d8c6"
+                        },
+                        {
+                            "pageNumber": 2,
+                            "userUnit": 1.0,
+                            "trimBox": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "width": 297.638,
+                                "height": 420.945
+                            },
+                            "cropBox": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "width": 297.638,
+                                "height": 420.945
+                            },
+                            "bleedBox": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "width": 297.638,
+                                "height": 420.945
+                            },
+                            "mediaBox": {
+                                "x": 0.0,
+                                "y": 0.0,
+                                "width": 297.638,
+                                "height": 420.945
+                            },
+                            "thumbnailUrl": "https://ams.api.pdf2press.aleyant.com/image/file/e2fe32b8-3765-4f56-9fdf-49416e91f94b",
+                            "thumbnailLargeUrl": "https://ams.api.pdf2press.aleyant.com/image/file/c9414a84-2bdd-4903-9caf-200f189b59e3"
+                        }
+                    ],
+                    "fileName": "a6verticale.pdf",
+                    "fileId": "bd4a652a-c9ab-493b-92c2-be969a03f89f",
+                    "fileSize": "12.25 MB",
+                    "fileSizeBytes": 12844494,
+                    "thumbJobId": "2099386",
+                    "runtimeVariables": {
+                        "FileInfo.FileInfo.FileName": {
+                            "fieldLabel": "The name of the original file",
+                            "fieldType": 1,
+                            "value": "a6verticale.pdf"
+                        },
+                        "FileInfo.FileInfo.FileSize": {
+                            "fieldLabel": "The file size in MB",
+                            "fieldType": 0,
+                            "value": 12.24946403503418
+                        },
+                        "FileInfo.FileInfo.PageCount": {
+                            "fieldLabel": "The quantity of pages",
+                            "fieldType": 0,
+                            "value": 2
+                        },
+                        "FileInfo.FileInfo.PageWidth": {
+                            "fieldLabel": "The Width of the first page",
+                            "fieldType": 0,
+                            "value": 297.638
+                        },
+                        "FileInfo.FileInfo.PageHeight": {
+                            "fieldLabel": "The height of the first page",
+                            "fieldType": 0,
+                            "value": 420.945
+                        },
+                        "FileInfo.FileInfo.TrimboxWidth": {
+                            "fieldLabel": "The Trimbox Width of the first page",
+                            "fieldType": 0,
+                            "value": 297.638
+                        },
+                        "FileInfo.FileInfo.TrimboxHeight": {
+                            "fieldLabel": "The Trimbox height of the first page",
+                            "fieldType": 0,
+                            "value": 420.945
+                        },
+                        "FileInfo.FileInfo.AllPagesSameDimension": {
+                            "fieldLabel": "If all the pages are in the same dimension",
+                            "fieldType": 1,
+                            "value": true
+                        }
+                    }
+                },
+                "finalLink": "https://ams.api.pdf2press.aleyant.com/image/file/008d0f26-77d1-4cf3-ad63-c749062a0184",
+                "originalLink": "https://ams.api.pdf2press.aleyant.com/image/D:\\ProductionFiles\\4834db0f-cf25-4833-b123-ce3ff80008cc\\workflows\\3504dff8-40a5-4504-9066-98848df8a00b\\v62\\ExternalApi\\f5a471a7-0156-4ffd-ad25-fe3fc2dac269\\bd4a652a-c9ab-493b-92c2-be969a03f89f-a6verticale_orig-injected.pdf",
+                "thumbnailsJobStatus": "Succeeded",
+                "runtimeVariables": [
+                    {
+                        "key": "FileInfo.FileInfo.PageCount",
+                        "value": "2",
+                        "label": "The quantity of pages"
+                    },
+                    {
+                        "key": "Impression",
+                        "value": "Quadri Recto Verso",
+                        "label": "Impression"
+                    },
+                    {
+                        "key": "FileInfo.FileInfo.TrimboxWidth",
+                        "value": "297.638",
+                        "label": "The Trimbox Width of the first page"
+                    },
+                    {
+                        "key": "FileInfo.FileInfo.FileName",
+                        "value": "a6verticale.pdf",
+                        "label": "The name of the original file"
+                    },
+                    {
+                        "key": "FileInfo.FileInfo.TrimboxHeight",
+                        "value": "420.945",
+                        "label": "The Trimbox height of the first page"
+                    },
+                    {
+                        "key": "PreflightProfile.DocumentIntegrity.IsPasswordProtected",
+                        "value": "False",
+                        "label": "Indicates if the document is password protected (true or false)"
+                    },
+                    {
+                        "key": "FileInfo.FileInfo.FileSize",
+                        "value": "12.24946403503418",
+                        "label": "The file size in MB"
+                    },
+                    {
+                        "key": "Largeur",
+                        "value": "210",
+                        "label": "Largeur"
+                    },
+                    {
+                        "key": "PreflightProfile.DocumentIntegrity.HasFormField",
+                        "value": "False",
+                        "label": "Indicates if the document has form fields (true or false)"
+                    },
+                    {
+                        "key": "FileInfo.FileInfo.PageWidth",
+                        "value": "297.638",
+                        "label": "The Width of the first page"
+                    },
+                    {
+                        "key": "FileInfo.FileInfo.PageHeight",
+                        "value": "420.945",
+                        "label": "The height of the first page"
+                    },
+                    {
+                        "key": "Hauteur",
+                        "value": "297",
+                        "label": "Hauteur"
+                    },
+                    {
+                        "key": "PreflightProfile.DocumentIntegrity.HasAnnotation",
+                        "value": "False",
+                        "label": "Indicates if the document has annotations (true or false)"
+                    },
+                    {
+                        "key": "PreflightProfile.PageOrientation.AllInTheSameOrientation",
+                        "value": "True",
+                        "label": "Indicates if all pages are in the same orientation (true or false)"
+                    },
+                    {
+                        "key": "FileInfo.FileInfo.AllPagesSameDimension",
+                        "value": "True",
+                        "label": "If all the pages are in the same dimension"
+                    }
+                ],
+                "userVariables": [
+                    {
+                        "variableName": "Hauteur",
+                        "variableType": 0,
+                        "variableDefault": null,
+                        "variableOptions": null,
+                        "variableOptionsSelect": [],
+                        "variableRequired": false,
+                        "variablePublic": false
+                    },
+                    {
+                        "variableName": "Largeur",
+                        "variableType": 0,
+                        "variableDefault": null,
+                        "variableOptions": null,
+                        "variableOptionsSelect": [],
+                        "variableRequired": false,
+                        "variablePublic": false
+                    },
+                    {
+                        "variableName": "Impression",
+                        "variableType": 1,
+                        "variableDefault": null,
+                        "variableOptions": null,
+                        "variableOptionsSelect": [],
+                        "variableRequired": false,
+                        "variablePublic": false
+                    }
+                ],
+                "injectedVariables": [
+                    {
+                        "name": "Quantity",
+                        "value": "1000"
+                    },
+                    {
+                        "name": "Quantité",
+                        "value": "1000"
+                    },
+                    {
+                        "name": "Nombre de version",
+                        "value": "2"
+                    },
+                    {
+                        "name": "Format",
+                        "value": "A4 (210 x 297 mm)"
+                    },
+                    {
+                        "name": "Orientation",
+                        "value": "Verticale"
+                    },
+                    {
+                        "name": "Impression",
+                        "value": "Quadri Recto Verso"
+                    },
+                    {
+                        "name": "Papier",
+                        "value": "90 gr. Offset"
+                    },
+                    {
+                        "name": "Pelliculage",
+                        "value": "Sans Pelliculage"
+                    },
+                    {
+                        "name": "Finition",
+                        "value": "Coins Carrés"
+                    },
+                    {
+                        "name": "Envoie Bon à tirer",
+                        "value": "Non"
+                    },
+                    {
+                        "name": "Délai de Fabrication",
+                        "value": "J+3"
+                    },
+                    {
+                        "name": "Date de Livraison estimée",
+                        "value": "Jeudi 20 novembre 2025"
+                    },
+                    {
+                        "name": "Largeur",
+                        "value": "210"
+                    },
+                    {
+                        "name": "Hauteur",
+                        "value": "297"
+                    },
+                    {
+                        "name": "Nombre de page",
+                        "value": "2"
+                    },
+                    {
+                        "name": "Quantity",
+                        "value": "1000"
+                    }
+                ],
+                "isDeleted": false,
+                "name": null,
+                "status": 5,
+                "startedOn": "2025-11-16T09:20:39.9029Z",
+                "finishedOn": null
+            }
+        ],
+        "args": {
+            "workflowId": "3504dff8-40a5-4504-9066-98848df8a00b",
+            "stepId": "c528d95e-36d1-401e-9002-6e4fbf892a50",
+            "parameters": {
+                "valueKind": 2
+            },
+            "subscriberId": "4834db0f-cf25-4833-b123-ce3ff80008cc",
+            "injectorSessionId": "f5a471a7-0156-4ffd-ad25-fe3fc2dac269",
+            "workflowVersion": 62,
+            "fromWorkflowSessionId": null,
+            "sendEmailTo": [
+                null
+            ],
+            "proofingBaseUrl": "https://decoration.ams.v6.pressero.com/Pdf2Press/ProofView?orderItemId=301f0000-568f-0050-81d1-08de24f157e1",
+            "postbackNotificationUrl": "https://decoration.ams.v6.pressero.com/Pdf2Press/ProductionFileReady/301f0000-568f-0050-81d1-08de24f157e1",
+            "fromData": {
+                "valueKind": 1
+            },
+            "userVariables": [
+                {
+                    "name": "Quantity",
+                    "value": "1000"
+                },
+                {
+                    "name": "Quantité",
+                    "value": "1000"
+                },
+                {
+                    "name": "Nombre de version",
+                    "value": "2"
+                },
+                {
+                    "name": "Format",
+                    "value": "A4 (210 x 297 mm)"
+                },
+                {
+                    "name": "Orientation",
+                    "value": "Verticale"
+                },
+                {
+                    "name": "Impression",
+                    "value": "Quadri Recto Verso"
+                },
+                {
+                    "name": "Papier",
+                    "value": "90 gr. Offset"
+                },
+                {
+                    "name": "Pelliculage",
+                    "value": "Sans Pelliculage"
+                },
+                {
+                    "name": "Finition",
+                    "value": "Coins Carrés"
+                },
+                {
+                    "name": "Envoie Bon à tirer",
+                    "value": "Non"
+                },
+                {
+                    "name": "Délai de Fabrication",
+                    "value": "J+3"
+                },
+                {
+                    "name": "Date de Livraison estimée",
+                    "value": "Jeudi 20 novembre 2025"
+                },
+                {
+                    "name": "Largeur",
+                    "value": "210"
+                },
+                {
+                    "name": "Hauteur",
+                    "value": "297"
+                },
+                {
+                    "name": "Nombre de page",
+                    "value": "2"
+                },
+                {
+                    "name": "Quantity",
+                    "value": "1000"
+                }
+            ],
+            "source": "Pressero",
+            "sourceLink": null,
+            "sourceLinkLabel": "Cart jose.nieto@aleyant.com on decoration.ams.v6.pressero.com",
+            "systemRuntimeVariables": {
+                "FileInfo.FileInfo.FileName": {
+                    "fieldLabel": "The name of the original file",
+                    "fieldType": 1,
+                    "value": {
+                        "valueKind": 3
+                    }
+                },
+                "FileInfo.FileInfo.FileSize": {
+                    "fieldLabel": "The file size in MB",
+                    "fieldType": 0,
+                    "value": {
+                        "valueKind": 4
+                    }
+                },
+                "FileInfo.FileInfo.PageCount": {
+                    "fieldLabel": "The quantity of pages",
+                    "fieldType": 0,
+                    "value": {
+                        "valueKind": 4
+                    }
+                },
+                "FileInfo.FileInfo.PageWidth": {
+                    "fieldLabel": "The Width of the first page",
+                    "fieldType": 0,
+                    "value": {
+                        "valueKind": 4
+                    }
+                },
+                "FileInfo.FileInfo.PageHeight": {
+                    "fieldLabel": "The height of the first page",
+                    "fieldType": 0,
+                    "value": {
+                        "valueKind": 4
+                    }
+                },
+                "FileInfo.FileInfo.TrimboxWidth": {
+                    "fieldLabel": "The Trimbox Width of the first page",
+                    "fieldType": 0,
+                    "value": {
+                        "valueKind": 4
+                    }
+                },
+                "FileInfo.FileInfo.TrimboxHeight": {
+                    "fieldLabel": "The Trimbox height of the first page",
+                    "fieldType": 0,
+                    "value": {
+                        "valueKind": 4
+                    }
+                },
+                "FileInfo.FileInfo.AllPagesSameDimension": {
+                    "fieldLabel": "If all the pages are in the same dimension",
+                    "fieldType": 1,
+                    "value": {
+                        "valueKind": 5
+                    }
+                }
+            },
+            "notes": null,
+            "convertFilesToPdf": false,
+            "type": 3,
+            "targetDPI": 0
+        },
+        "results": null,
+        "resendEmailLogs": [],
+        "archiveStatus": 0,
+        "isArchived": false
+    },
+    "success": true,
+    "errors": []
+}
