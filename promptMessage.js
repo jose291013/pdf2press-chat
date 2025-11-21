@@ -39,24 +39,84 @@ Si la section "QUESTION UTILISATEUR" ci-dessous est vide, produis une première 
 
 
   const brandName = promptConfig.brandName || "notre imprimerie";
-  const ctaText =
+    const ctaText =
     promptConfig.ctaText ||
     "Si vous avez le moindre doute, n’hésitez pas à nous contacter avant d’imprimer.";
 
   const sections = promptConfig.sections || {};
-  const summaryTitle =
-    sections.summaryTitle || "### 1. Résumé global";
-  const issuesTitle =
-    sections.issuesTitle || "### 2. Problèmes à corriger";
-  const watchTitle =
-    sections.watchTitle || "### 3. Points à surveiller";
-  const actionsTitle =
-    sections.actionsTitle || "### 4. Ce que vous devez faire maintenant";
-  const batHelpTitle =
-    sections.batHelpTitle ||
-    "### 5. Où trouver les zones à corriger dans le BAT";
 
-  // Texte lisible des liens d’aide que le serveur a détectés
+  // Déterminer la langue à partir de la consigne (es / en / fr / nl / de)
+  let langCode = "fr";
+  const lowerInstr = (languageInstruction || "").toLowerCase();
+  if (lowerInstr.includes("español") || lowerInstr.includes("espagnol")) {
+    langCode = "es";
+  } else if (lowerInstr.includes("english") || lowerInstr.includes("anglais")) {
+    langCode = "en";
+  } else if (
+    lowerInstr.includes("nederlands") ||
+    lowerInstr.includes("néerlandais") ||
+    lowerInstr.includes("dutch")
+  ) {
+    langCode = "nl";
+  } else if (
+    lowerInstr.includes("deutsch") ||
+    lowerInstr.includes("allemand") ||
+    lowerInstr.includes("german")
+  ) {
+    langCode = "de";
+  }
+
+  const defaultSectionTitles = {
+    fr: {
+      summary: "### 1. Résumé global",
+      issues: "### 2. Problèmes à corriger",
+      watch: "### 3. Points à surveiller",
+      actions: "### 4. Ce que vous devez faire maintenant",
+      batHelp: "### 5. Où trouver les zones à corriger dans le BAT",
+    },
+    es: {
+      summary: "### 1. Resumen global",
+      issues: "### 2. Problemas que corregir",
+      watch: "### 3. Puntos a vigilar",
+      actions: "### 4. Qué debes hacer ahora",
+      batHelp: "### 5. Dónde encontrar las zonas a corregir en el BAT",
+    },
+    en: {
+      summary: "### 1. Overall summary",
+      issues: "### 2. Issues to fix",
+      watch: "### 3. Points to watch",
+      actions: "### 4. What you need to do now",
+      batHelp:
+        "### 5. Where to find the areas to fix in the proof",
+    },
+    nl: {
+      summary: "### 1. Overzicht",
+      issues: "### 2. Problemen om op te lossen",
+      watch: "### 3. Aandachtspunten",
+      actions: "### 4. Wat je nu moet doen",
+      batHelp:
+        "### 5. Waar je de te corrigeren zones vindt in de proef",
+    },
+    de: {
+      summary: "### 1. Gesamtüberblick",
+      issues: "### 2. Zu korrigierende Probleme",
+      watch: "### 3. Punkte, auf die du achten solltest",
+      actions: "### 4. Was du jetzt tun musst",
+      batHelp:
+        "### 5. Wo du die zu korrigierenden Bereiche im Proof findest",
+    },
+  };
+
+  const t = defaultSectionTitles[langCode] || defaultSectionTitles.fr;
+
+  const summaryTitle = sections.summaryTitle || t.summary;
+  const issuesTitle = sections.issuesTitle || t.issues;
+  const watchTitle = sections.watchTitle || t.watch;
+  const actionsTitle = sections.actionsTitle || t.actions;
+  const batHelpTitle = sections.batHelpTitle || t.batHelp;
+
+
+    // Texte lisible des liens d’aide que le serveur a détectés
   const helpLinksText = helpLinks.length
     ? helpLinks
         .map(
@@ -66,9 +126,49 @@ Si la section "QUESTION UTILISATEUR" ci-dessous est vide, produis une première 
         .join("\n")
     : "Aucun lien d'aide spécifique n'a été détecté pour ce fichier.";
 
+  // Exemples de verdicts selon la langue
+  let verdictExamples;
+  switch (langCode) {
+    case "es":
+      verdictExamples = `
+   - "**Veredicto: es necesario hacer correcciones antes de imprimir.**"
+   - "**Veredicto: tu archivo está listo para imprimir.**"
+   - "**Veredicto: tu archivo se puede imprimir, pero la calidad de imagen será aceptable, no óptima.**"
+`;
+      break;
+    case "en":
+      verdictExamples = `
+   - "**Verdict: corrections are needed before printing.**"
+   - "**Verdict: your file is ready to print.**"
+   - "**Verdict: your file is printable, with acceptable but not optimal image quality.**"
+`;
+      break;
+    case "nl":
+      verdictExamples = `
+   - "**Verdict: er zijn correcties nodig voordat je gaat drukken.**"
+   - "**Verdict: je bestand is klaar om te drukken.**"
+   - "**Verdict: je bestand is drukbaar, maar de beeldkwaliteit is acceptabel en niet optimaal.**"
+`;
+      break;
+    case "de":
+      verdictExamples = `
+   - "**Urteil: Vor dem Druck sind noch Korrekturen erforderlich.**"
+   - "**Urteil: Ihre Datei ist druckbereit.**"
+   - "**Urteil: Ihre Datei ist druckbar, aber die Bildqualität ist akzeptabel und nicht optimal.**"
+`;
+      break;
+    default: // fr
+      verdictExamples = `
+   - "**Verdict : des corrections sont nécessaires avant impression.**"
+   - "**Verdict : votre fichier est prêt pour l’impression.**"
+   - "**Verdict : votre fichier est imprimable, avec une qualité d’image acceptable mais pas optimale.**"
+`;
+  }
+
   return `
 RAPPORT STRUCTURÉ PDF2PRESS (JSON, à lire avant de répondre) :
 ${rapportTexte}
+
 
 LIENS D'AIDE DISPONIBLES POUR CE FICHIER (ne pas afficher les URL telles quelles au client, mais en parler) :
 ${helpLinksText}
@@ -127,11 +227,10 @@ Règles pour les conseils pratiques de correction :
 Mise en forme et structure de la réponse (utilise du markdown simple, sans montrer le JSON) :
 
 1) Commence toujours par une ligne de verdict en gras, par exemple :
-   - "**Verdict : des corrections sont nécessaires avant impression.**"
-   - ou "**Verdict : votre fichier est prêt pour l’impression.**"
-   - ou "**Verdict : votre fichier est imprimable, avec une qualité d’image acceptable mais pas optimale.**"
+${verdictExamples}
 
    Choisis le verdict en fonction de summary.worstDpi et de la gravité des erreurs encore présentes dans todo / summary.userActions.
+
 
 2) Ensuite, structure ta réponse avec exactement ces sections, en utilisant des titres de niveau 3 (en reprenant ou adaptant les titres suivants selon le contexte) :
 
