@@ -152,15 +152,15 @@ const HELP_LINKS = {
     code: "imageResolution",
     urls: {
       fr: {
-        url: "https://votre-site-aide/resolution-image",
+        url: "https://decoration.ams.v6.pressero.com/page/aide-sur-amelioration-qualite-image",
         label: "En savoir plus sur la résolution d'image",
       },
       es: {
-        url: "https://votre-site-aide/es/resolucion-imagen",
+        url: "https://decoration.ams.v6.pressero.com/page/Ayuda-sobre-la-resolucion-de-imagenes",
         label: "Más información sobre la resolución de imagen",
       },
       en: {
-        url: "https://votre-site-aide/en/image-resolution",
+        url: "https://decoration.ams.v6.pressero.com/page/Image-Resolution-Print-QualityandImprovement-TiPS",
         label: "More about image resolution",
       },
     },
@@ -186,15 +186,15 @@ const HELP_LINKS = {
     code: "fontsNotEmbedded",
     urls: {
       fr: {
-        url: "https://votre-site-aide/polices-pdf",
+        url: "https://decoration.ams.v6.pressero.com/page/Aide-pour-integration-polices-sur-vos-fichiers",
         label: "Polices non incorporées dans un PDF",
       },
       es: {
-        url: "https://votre-site-aide/es/fuentes-pdf",
+        url: "https://decoration.ams.v6.pressero.com/page/Ayuda-para-la-incorporacion-de-las-fuentes-en-pdf",
         label: "Fuentes no incrustadas en un PDF",
       },
       en: {
-        url: "https://votre-site-aide/en/fonts-pdf",
+        url: "https://decoration.ams.v6.pressero.com/page/Fonts-in-PDF-Prepress-Guide",
         label: "Non-embedded fonts in a PDF",
       },
     },
@@ -203,15 +203,15 @@ const HELP_LINKS = {
     code: "distortion",
     urls: {
       fr: {
-        url: "https://votre-site-aide/deformation",
+        url: "https://decoration.ams.v6.pressero.com/page/Redimensionnement-des-pages-sans-distortions",
         label: "Déformations, mise à l’échelle et proportions",
       },
       es: {
-        url: "https://votre-site-aide/es/deformacion",
+        url: "https://decoration.ams.v6.pressero.com/page/Redimensionamiento-de-pagina-sin-distorcion-Ayuda",
         label: "Deformación, escala y proporciones",
       },
       en: {
-        url: "https://votre-site-aide/en/distortion",
+        url: "https://decoration.ams.v6.pressero.com/page/Page-Resizing-and-Maximum-Distortion-in-PDF2Press",
         label: "Distortion, scaling and proportions",
       },
     },
@@ -220,15 +220,15 @@ const HELP_LINKS = {
     code: "bleed",
     urls: {
       fr: {
-        url: "https://votre-site-aide/fond-perdu",
+        url: "https://decoration.ams.v6.pressero.com/page/Que-sont-les-fonds-perdus-et-comment-les-ajouter",
         label: "Qu’est-ce que le fond perdu ?",
       },
       es: {
-        url: "https://votre-site-aide/es/sangrado",
+        url: "https://decoration.ams.v6.pressero.com/page/Que-es-el-sangrado",
         label: "¿Qué es el sangrado (bleed)?",
       },
       en: {
-        url: "https://votre-site-aide/en/bleed",
+        url: "https://decoration.ams.v6.pressero.com/page/What-is-bleed-in-print",
         label: "What is bleed in print?",
       },
     },
