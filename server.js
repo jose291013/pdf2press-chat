@@ -533,6 +533,14 @@ app.post("/pdf2press-chat", async (req, res) => {
       console.error("Erreur de lecture de prompt-config.json :", err);
       promptConfig = {};
     }
+    // Liens d'aide en fonction du rapport + langue
+    const helpLinks = buildHelpLinks(report, userLang);
+
+    // Mode d'interaction : première analyse ou question de suivi
+    const interactionMode =
+      question && typeof question === "string" && question.trim().length > 0
+        ? "followup"
+        : "initial";
 
     // On construit le message utilisateur pour l'assistant
     const userContent = buildAssistantUserContent({
@@ -595,7 +603,7 @@ app.post("/pdf2press-chat", async (req, res) => {
       .trim();
 
     // Liens d'aide en fonction du rapport + langue
-    const helpLinks = buildHelpLinks(report, userLang);
+    
 
     runLocks[workflowSessionId] = false;
 
