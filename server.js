@@ -546,6 +546,8 @@ app.post("/pdf2press-chat", async (req, res) => {
       fileName,
       question,
       promptConfig,
+      helpLinks,
+      interactionMode,
     });
 
     // On envoie à l'assistant
