@@ -587,9 +587,30 @@ app.post("/pdf2press-chat", async (req, res) => {
       });
     }
 
-    if (runStatus.status !== "completed") {
-      throw new Error("Run non terminé : " + runStatus.status);
+        if (runStatus.status !== "completed") {
+      // Log détaillé pour debug Render
+      console.error(
+        "📉 Run non terminé, détails :",
+        JSON.stringify(
+          {
+            id: runStatus.id,
+            status: runStatus.status,
+            last_error: runStatus.last_error || null,
+            required_action: runStatus.required_action || null,
+          },
+          null,
+          2
+        )
+      );
+
+      let reason = "Raison inconnue";
+      if (runStatus.last_error && runStatus.last_error.message) {
+        reason = runStatus.last_error.message;
+      }
+
+      throw new Error(`Run non terminé (${runStatus.status}) : ${reason}`);
     }
+
 
     // =========================
     // Récupération de la réponse
