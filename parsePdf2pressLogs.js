@@ -330,9 +330,70 @@ function extractFixesFromWorkflowLogs(result) {
 }
 
 /**
- * Fonction principale : prend le JSON brut de PDF2Press (objet ou string),
- * renvoie un rapport structuré.
+ * Calcule les infos de format / redimensionnement à partir du rapport.
+ * - requested : format demandé (Largeur / Hauteur Pressero)
+ * - final     : format final après resize auto (NewWidth / NewHeight)
+ * - autoResizeDone    : true si le resize auto a réussi
+ * - autoResizeBlocked : true si le resize a échoué / bloqué (skew, etc.)
+ * - proportionGapPercent : écart max en % entre demandé et final
  */
+function computeFormatFromReport(report) {
+  const meta = report.meta || {};
+  const requestedWidth = meta.trimWidthMm || null;
+  const requestedHeight = meta.trimHeightMm || null;
+
+  const fixes = Array.isArray(report.fixes) ? report.fixes : [];
+  const resizeFix = fixes.find(
+    (f) => f && f.code === "pageResize" && f.raw && f.raw.aResults
+  );
+
+  const format = {
+    requested:
+      requestedWidth && requestedHeight
+        ? { widthMm: requestedWidth, heightMm: requestedHeight }
+        : null,
+    final: null,
+    autoResizeDone: false,
+    autoResizeBlocked: false,
+    wouldExceedMaxSkew: false,
+    proportionGapPercent: null,
+  };
+
+  if (!resizeFix) {
+    // Pas de resize détecté => on laisse les valeurs par défaut
+    return format;
+  }
+
+  const r = resizeFix.raw.aResults || {};
+  const finalWidth = r.NewWidth ?? null;
+  const finalHeight = r.NewHeight ?? null;
+
+  if (finalWidth != null && finalHeight != null) {
+    format.final = { widthMm: finalWidth, heightMm: finalHeight };
+  }
+
+  const success = r.Success === true;
+  const wouldExceed = r.WouldExceedMaxSkew === true;
+
+  format.autoResizeDone = !!success;
+  format.wouldExceedMaxSkew = wouldExceed;
+  // "Bloqué" = soit échec explicite, soit skew trop fort
+  format.autoResizeBlocked = !success || wouldExceed;
+
+  if (
+    requestedWidth &&
+    requestedHeight &&
+    finalWidth != null &&
+    finalHeight != null
+  ) {
+    const gapW = Math.abs(finalWidth - requestedWidth) / requestedWidth * 100;
+    const gapH = Math.abs(finalHeight - requestedHeight) / requestedHeight * 100;
+    format.proportionGapPercent = Math.max(gapW, gapH);
+  }
+
+  return format;
+}
+
 export function parsePdf2pressLogs(rawLogs) {
   const logs = typeof rawLogs === "string" ? JSON.parse(rawLogs) : rawLogs;
   const logsJson =
@@ -400,10 +461,13 @@ export function parsePdf2pressLogs(rawLogs) {
     }
   }
 
-  // 3) Fixes appliqués (fond perdu, flattening, couleurs, polices, rich black, resize…)
+    // 3) Fixes appliqués (fond perdu, flattening, couleurs, polices, rich black, resize…)
   report.fixes = extractFixesFromWorkflowLogs(result);
 
-  // 4) Stats
+  // 4) Infos de format / redimensionnement
+  report.format = computeFormatFromReport(report);
+
+  // 5) Stats
   report.stats.errorCount = report.errors.length;
   report.stats.warningCount = report.warnings.length;
   report.stats.infoCount = report.infos.length;
@@ -411,6 +475,7 @@ export function parsePdf2pressLogs(rawLogs) {
 
   return report;
 }
+
 
 
 /**
