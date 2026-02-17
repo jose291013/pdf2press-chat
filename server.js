@@ -86,23 +86,28 @@ async function presseroGetCart(token, userId) {
 async function presseroGetProductPrice(token, userId, quantities, fontsOuiNon) {
   const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/product/${EXPERT_PRODUCT_ID}/price?userId=${encodeURIComponent(userId)}`;
 
+  // 👉 AJOUTER ÇA
   const payload = {
     Quantities: quantities,
     Options: [
-      { Key: EXPERT_OPT_FONTS_ID, Value: fontsOuiNon } // "Oui" / "Non"
+      { Key: EXPERT_OPT_FONTS_ID, Value: fontsOuiNon }
     ]
   };
 
   const r = await fetch(url, {
-  method: "POST",
-  headers: {
-    Authorization: presseroAuthHeader(token),
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(payload)
-});
+    method: "POST",
+    headers: {
+      Authorization: presseroAuthHeader(token),
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  });
 
-  if (!r.ok) throw new Error(`Price failed (${r.status}): ${await r.text()}`);
+  if (!r.ok) {
+    const txt = await r.text().catch(() => "");
+    throw new Error(`Price failed (${r.status}): ${txt}`);
+  }
+
   return await r.json();
 }
 
