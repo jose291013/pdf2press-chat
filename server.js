@@ -9,7 +9,7 @@ import OpenAI from "openai";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-
+import fetch from "node-fetch";
 import { parsePdf2pressLogs } from "./parsePdf2pressLogs.js";
 import { buildAssistantUserContent } from "./promptMessage.js";
 
@@ -68,6 +68,28 @@ async function presseroGetCart(token, userId) {
   if (!cartId) throw new Error("Cart id missing");
   return { cartId, cart: data };
 }
+// --- PRICE endpoint ---
+async function presseroGetProductPrice(token, userId, quantities, fontsOuiNon) {
+  const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/product/${EXPERT_PRODUCT_ID}/price?userId=${encodeURIComponent(userId)}`;
+
+  const payload = {
+    Quantities: quantities,
+    Options: [
+      { Key: EXPERT_OPT_FONTS_ID, Value: fontsOuiNon } // "Oui" / "Non"
+    ]
+  };
+
+  const r = await fetch(url, {
+    method: "POST",
+    headers: { Authorization: token, "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  if (!r.ok) throw new Error(`Price failed (${r.status}): ${await r.text()}`);
+  return await r.json();
+}
+
+
 
 async function presseroAddItem(token, userId, cartId, pricingParameters) {
   const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/${encodeURIComponent(cartId)}/item/?userId=${encodeURIComponent(userId)}`; // :contentReference[oaicite:10]{index=10}
@@ -134,6 +156,76 @@ console.log(
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// POST /api/expert-prepresse/add-to-cart
+app.post("/api/expert-prepresse/add-to-cart", async (req, res) => {
+  try {
+    const { email, mode, expertPrepress } = req.body || {};
+    if (!email) return res.status(400).json({ ok: false, error: "Missing email" });
+    if (!expertPrepress) return res.status(400).json({ ok: false, error: "Missing expertPrepress" });
+
+    const q1 = Number(expertPrepress.q1_pagesErrors || 0);
+    const q2 = Number(expertPrepress.q2_imagesErrors || 0);
+    const q3raw = Number(expertPrepress.q3_imagesWarnings || 0);
+    const fontsNotEmbedded = !!expertPrepress.fontsNotEmbedded;
+
+    const q3 = (mode === "errors_only") ? 0 : q3raw;
+
+    const token = await presseroAuthenticate();
+    const userId = await presseroGetUserIdByEmail(token, String(email).trim());
+    const { cartId } = await presseroGetCart(token, userId);
+
+    // IMPORTANT: on envoie les valeurs, l’API attend un tableau de quantités dans l’ordre Q1,Q2,Q3
+    // et les options sous forme {Key: <optionId>, Value: "Oui"/"Non"} :contentReference[oaicite:11]{index=11}
+    const pricingParameters = {
+      Quantities: [q1, q2, q3],
+      Options: [
+        { Key: EXPERT_OPT_FONTS_ID, Value: fontsNotEmbedded ? "Oui" : "Non" }
+      ]
+    };
+
+    const cartUpdated = await presseroAddItem(token, userId, cartId, pricingParameters);
+    res.json({ ok: true, cart: cartUpdated, injected: { Quantities: [q1,q2,q3], fonts: fontsNotEmbedded ? "Oui":"Non" }});
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message || String(e) });
+  }
+});
+
+// POST /api/expert-prepresse/price
+// Body: { email, mode: "errors_only"|"errors_and_warnings", expertPrepress: { q1_pagesErrors, q2_imagesErrors, q3_imagesWarnings, fontsNotEmbedded } }
+app.post("/api/expert-prepresse/price", async (req, res) => {
+  try {
+    const { email, mode, expertPrepress } = req.body || {};
+    if (!email) return res.status(400).json({ ok: false, error: "Missing email" });
+    if (!expertPrepress) return res.status(400).json({ ok: false, error: "Missing expertPrepress" });
+
+    const q1 = Number(expertPrepress.q1_pagesErrors || 0) || 0;
+    const q2 = Number(expertPrepress.q2_imagesErrors || 0) || 0;
+    const q3raw = Number(expertPrepress.q3_imagesWarnings || 0) || 0;
+    const q3 = (mode === "errors_only") ? 0 : q3raw;
+
+    const fontsOuiNon = expertPrepress.fontsNotEmbedded ? "Oui" : "Non";
+
+    const token = await presseroAuthenticate();
+    const userId = await presseroGetUserIdByEmail(token, String(email).trim());
+
+    const raw = await presseroGetProductPrice(token, userId, [q1, q2, q3], fontsOuiNon);
+
+    // Essaye d’extraire un champ prix “courant”, sinon renvoie raw et le front affichera raw
+    const price =
+      raw?.TotalPrice ?? raw?.Total ?? raw?.Price ?? raw?.price ?? raw?.total ?? null;
+
+    res.json({
+      ok: true,
+      price,
+      raw,
+      injected: { quantities: [q1, q2, q3], fonts: fontsOuiNon }
+    });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message || String(e) });
+  }
+});
+
 
 // -----------------------------------------------------
 // Servir les fichiers statiques du dossier "public"
@@ -465,39 +557,7 @@ function deriveResizeInfo(report) {
   return resize;
 }
 
-// POST /api/expert-prepresse/add-to-cart
-app.post("/api/expert-prepresse/add-to-cart", async (req, res) => {
-  try {
-    const { email, mode, expertPrepress } = req.body || {};
-    if (!email) return res.status(400).json({ ok: false, error: "Missing email" });
-    if (!expertPrepress) return res.status(400).json({ ok: false, error: "Missing expertPrepress" });
 
-    const q1 = Number(expertPrepress.q1_pagesErrors || 0);
-    const q2 = Number(expertPrepress.q2_imagesErrors || 0);
-    const q3raw = Number(expertPrepress.q3_imagesWarnings || 0);
-    const fontsNotEmbedded = !!expertPrepress.fontsNotEmbedded;
-
-    const q3 = (mode === "errors_only") ? 0 : q3raw;
-
-    const token = await presseroAuthenticate();
-    const userId = await presseroGetUserIdByEmail(token, String(email).trim());
-    const { cartId } = await presseroGetCart(token, userId);
-
-    // IMPORTANT: on envoie les valeurs, l’API attend un tableau de quantités dans l’ordre Q1,Q2,Q3
-    // et les options sous forme {Key: <optionId>, Value: "Oui"/"Non"} :contentReference[oaicite:11]{index=11}
-    const pricingParameters = {
-      Quantities: [q1, q2, q3],
-      Options: [
-        { Key: EXPERT_OPT_FONTS_ID, Value: fontsNotEmbedded ? "Oui" : "Non" }
-      ]
-    };
-
-    const cartUpdated = await presseroAddItem(token, userId, cartId, pricingParameters);
-    res.json({ ok: true, cart: cartUpdated, injected: { Quantities: [q1,q2,q3], fonts: fontsNotEmbedded ? "Oui":"Non" }});
-  } catch (e) {
-    res.status(500).json({ ok: false, error: e.message || String(e) });
-  }
-});
 
 // =====================================================
 // ROUTE PRINCIPALE
