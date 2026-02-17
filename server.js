@@ -50,7 +50,14 @@ async function presseroAuthenticate() {
 
 async function presseroGetUserIdByEmail(token, email) {
   const url = `https://${PRESSERO_ADMIN_URL}/api/site/${PRESSERO_SITE_DOMAIN}/users/?pageNumber=0&pageSize=1&email=${encodeURIComponent(email)}&includeDeleted=false`; // :contentReference[oaicite:8]{index=8}
-  const r = await fetch(url, { headers: { Authorization: token } });
+  const r = await fetch(url, {
+  method: "POST",
+  headers: {
+    Authorization: presseroAuthHeader(token),
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(payload)
+});
   if (!r.ok) throw new Error(`Get user by email failed (${r.status}): ${await r.text()}`);
   const data = await r.json();
   const user = (data?.Items && data.Items[0]) || null;
@@ -61,7 +68,14 @@ async function presseroGetUserIdByEmail(token, email) {
 
 async function presseroGetCart(token, userId) {
   const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/?userId=${encodeURIComponent(userId)}`; // :contentReference[oaicite:9]{index=9}
-  const r = await fetch(url, { headers: { Authorization: token } });
+  const r = await fetch(url, {
+  method: "POST",
+  headers: {
+    Authorization: presseroAuthHeader(token),
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(payload)
+});
   if (!r.ok) throw new Error(`Get cart failed (${r.status}): ${await r.text()}`);
   const data = await r.json();
   const cartId = data?.Id || data?.CartId || data?.ID;
@@ -80,10 +94,13 @@ async function presseroGetProductPrice(token, userId, quantities, fontsOuiNon) {
   };
 
   const r = await fetch(url, {
-    method: "POST",
-    headers: { Authorization: token, "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
-  });
+  method: "POST",
+  headers: {
+    Authorization: presseroAuthHeader(token),
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(payload)
+});
 
   if (!r.ok) throw new Error(`Price failed (${r.status}): ${await r.text()}`);
   return await r.json();
@@ -104,10 +121,13 @@ async function presseroAddItem(token, userId, cartId, pricingParameters) {
   };
 
   const r = await fetch(url, {
-    method: "POST",
-    headers: { Authorization: token, "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
-  });
+  method: "POST",
+  headers: {
+    Authorization: presseroAuthHeader(token),
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(payload)
+});
 
   if (!r.ok) throw new Error(`Add item failed (${r.status}): ${await r.text()}`);
   return await r.json();
@@ -213,7 +233,14 @@ app.post("/api/expert-prepresse/price", async (req, res) => {
 
     // Essaye d’extraire un champ prix “courant”, sinon renvoie raw et le front affichera raw
     const price =
-      raw?.TotalPrice ?? raw?.Total ?? raw?.Price ?? raw?.price ?? raw?.total ?? null;
+  raw?.Cost ??
+  raw?.NonMarkupCost ??
+  raw?.TotalPrice ??
+  raw?.Total ??
+  raw?.Price ??
+  raw?.price ??
+  raw?.total ??
+  null;
 
     res.json({
       ok: true,
@@ -312,6 +339,8 @@ async function fetchPdf2PressLogs(workflowSessionId) {
   return await resp.json();
 }
 
+
+
 // =====================================================
 // LIENS D'AIDE PAR TYPE DE PROBLÈME
 // =====================================================
@@ -402,6 +431,15 @@ const HELP_LINKS = {
     },
   },
 };
+function presseroAuthHeader(token) {
+  const t = String(token || "").trim();
+  if (!t) return "";
+  // si déjà préfixé, on ne touche pas
+  if (/^(Token|Bearer)\s+/i.test(t)) return t;
+  // Postman => "Token {token}"
+  return `Token ${t}`;
+}
+
 
 function buildHelpLinks(structuredReport, userLang) {
   const lang = userLang || "fr";
