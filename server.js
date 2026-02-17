@@ -15,6 +15,82 @@ import { buildAssistantUserContent } from "./promptMessage.js";
 
 dotenv.config();
 
+const PRESSERO_ADMIN_URL = process.env.PRESSERO_ADMIN_URL || "admin.ams.v6.pressero.com";
+const PRESSERO_SITE_DOMAIN = process.env.PRESSERO_SITE_DOMAIN || "decoration.ams.v6.pressero.com";
+const EXPERT_PRODUCT_ID = process.env.PRESSERO_EXPERT_PREPRESS_PRODUCT_ID || "dc1b0000-568f-0050-d81e-08de6d895c30";
+
+const EXPERT_Q1_ID = "F6A57BC95C2AD5E33C62B5EA3F131C47";
+const EXPERT_Q2_ID = "4FCA9F3A3607CA5CC7C37E2E7FB54258";
+const EXPERT_Q3_ID = "FA1859EF85C90319249C854270B72F81";
+const EXPERT_OPT_FONTS_ID = "F5549E438FF413273B3502C2D084C1D0";
+
+let presseroTokenCache = { token: null, fetchedAt: 0 };
+async function presseroAuthenticate() {
+  const now = Date.now();
+  if (presseroTokenCache.token && (now - presseroTokenCache.fetchedAt) < 25 * 60 * 1000) {
+    return presseroTokenCache.token;
+  }
+
+  const url = `https://${PRESSERO_ADMIN_URL}/api/V2/Authentication`; // :contentReference[oaicite:7]{index=7}
+  const body = {
+    UserName: process.env.PRESSERO_USERNAME,
+    Password: process.env.PRESSERO_PASSWORD,
+    SubscriberId: process.env.PRESSERO_SUBSCRIBER_ID,
+    ConsumerID: process.env.PRESSERO_CONSUMER_ID
+  };
+
+  const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  if (!r.ok) throw new Error(`Pressero auth failed (${r.status}): ${await r.text()}`);
+  const data = await r.json();
+  const token = data.Token || data.token || data.AccessToken;
+  if (!token) throw new Error("Pressero auth: token missing");
+  presseroTokenCache = { token, fetchedAt: now };
+  return token;
+}
+
+async function presseroGetUserIdByEmail(token, email) {
+  const url = `https://${PRESSERO_ADMIN_URL}/api/site/${PRESSERO_SITE_DOMAIN}/users/?pageNumber=0&pageSize=1&email=${encodeURIComponent(email)}&includeDeleted=false`; // :contentReference[oaicite:8]{index=8}
+  const r = await fetch(url, { headers: { Authorization: token } });
+  if (!r.ok) throw new Error(`Get user by email failed (${r.status}): ${await r.text()}`);
+  const data = await r.json();
+  const user = (data?.Items && data.Items[0]) || null;
+  const userId = user?.Id || user?.UserId || user?.ID;
+  if (!userId) throw new Error(`No user found for email=${email}`);
+  return userId;
+}
+
+async function presseroGetCart(token, userId) {
+  const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/?userId=${encodeURIComponent(userId)}`; // :contentReference[oaicite:9]{index=9}
+  const r = await fetch(url, { headers: { Authorization: token } });
+  if (!r.ok) throw new Error(`Get cart failed (${r.status}): ${await r.text()}`);
+  const data = await r.json();
+  const cartId = data?.Id || data?.CartId || data?.ID;
+  if (!cartId) throw new Error("Cart id missing");
+  return { cartId, cart: data };
+}
+
+async function presseroAddItem(token, userId, cartId, pricingParameters) {
+  const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/${encodeURIComponent(cartId)}/item/?userId=${encodeURIComponent(userId)}`; // :contentReference[oaicite:10]{index=10}
+
+  const payload = {
+    ProductId: EXPERT_PRODUCT_ID,
+    ShipTo: "",
+    ShippingMethod: "",
+    PricingParameters: pricingParameters,
+    ItemName: "Expert prépresse",
+    Notes: "Ajouté via PDF2Press chat"
+  };
+
+  const r = await fetch(url, {
+    method: "POST",
+    headers: { Authorization: token, "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
+
+  if (!r.ok) throw new Error(`Add item failed (${r.status}): ${await r.text()}`);
+  return await r.json();
+}
+
 // -----------------------------------------------------
 // Chemins de base (public/ + config/)
 // -----------------------------------------------------
@@ -292,6 +368,44 @@ function buildHelpLinks(structuredReport, userLang) {
 
   return links;
 }
+function deriveExpertPrepress(report) {
+  const errors = Array.isArray(report?.errors) ? report.errors : [];
+  const warnings = Array.isArray(report?.warnings) ? report.warnings : [];
+
+  // Option0: polices non incrustées ?
+  const fontsNotEmbedded =
+    errors.concat(warnings).some((v) => v?.tag === "fonts") ||
+    errors.concat(warnings).some((v) => String(v?.message || "").toLowerCase().includes("not embedded"));
+
+  // Q2/Q3 : image resolution
+  const q2_imagesErrors = errors.filter((v) => v?.tag === "imageResolution").length;
+  const q3_imagesWarnings = warnings.filter((v) => v?.tag === "imageResolution").length;
+
+  // Q1 : pages avec erreurs (fallback: 1 si on n’a pas la page dans le log)
+  const pages = new Set();
+  for (const v of errors) {
+    const d = v?.data;
+    const p = Number(d?.page ?? d?.Page ?? d?.pageNumber ?? d?.PageNumber);
+    if (Number.isFinite(p) && p > 0) pages.add(p);
+    else {
+      const m = String(v?.message || "").match(/page\s*[:#]?\s*(\d+)/i);
+      if (m?.[1]) pages.add(Number(m[1]));
+    }
+  }
+  const q1_pagesErrors = pages.size || (errors.length ? 1 : 0);
+
+  const offerExpertPrepress = (errors.length + warnings.length) > 0;
+
+  return {
+    offerExpertPrepress,
+    expertPrepress: {
+      q1_pagesErrors,
+      q2_imagesErrors,
+      q3_imagesWarnings,
+      fontsNotEmbedded
+    }
+  };
+}
 
 // --------------------------------------
 // Détection "intelligente" du redimensionnement de pages
@@ -351,11 +465,45 @@ function deriveResizeInfo(report) {
   return resize;
 }
 
+// POST /api/expert-prepresse/add-to-cart
+app.post("/api/expert-prepresse/add-to-cart", async (req, res) => {
+  try {
+    const { email, mode, expertPrepress } = req.body || {};
+    if (!email) return res.status(400).json({ ok: false, error: "Missing email" });
+    if (!expertPrepress) return res.status(400).json({ ok: false, error: "Missing expertPrepress" });
+
+    const q1 = Number(expertPrepress.q1_pagesErrors || 0);
+    const q2 = Number(expertPrepress.q2_imagesErrors || 0);
+    const q3raw = Number(expertPrepress.q3_imagesWarnings || 0);
+    const fontsNotEmbedded = !!expertPrepress.fontsNotEmbedded;
+
+    const q3 = (mode === "errors_only") ? 0 : q3raw;
+
+    const token = await presseroAuthenticate();
+    const userId = await presseroGetUserIdByEmail(token, String(email).trim());
+    const { cartId } = await presseroGetCart(token, userId);
+
+    // IMPORTANT: on envoie les valeurs, l’API attend un tableau de quantités dans l’ordre Q1,Q2,Q3
+    // et les options sous forme {Key: <optionId>, Value: "Oui"/"Non"} :contentReference[oaicite:11]{index=11}
+    const pricingParameters = {
+      Quantities: [q1, q2, q3],
+      Options: [
+        { Key: EXPERT_OPT_FONTS_ID, Value: fontsNotEmbedded ? "Oui" : "Non" }
+      ]
+    };
+
+    const cartUpdated = await presseroAddItem(token, userId, cartId, pricingParameters);
+    res.json({ ok: true, cart: cartUpdated, injected: { Quantities: [q1,q2,q3], fonts: fontsNotEmbedded ? "Oui":"Non" }});
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e.message || String(e) });
+  }
+});
+
 // =====================================================
 // ROUTE PRINCIPALE
 // =====================================================
 app.post("/pdf2press-chat", async (req, res) => {
-  const { workflowSessionId, question } = req.body;
+  const { workflowSessionId, question, email } = req.body;
 
   if (!workflowSessionId) {
     return res.status(400).json({ error: "workflowSessionId est obligatoire" });
@@ -364,7 +512,7 @@ app.post("/pdf2press-chat", async (req, res) => {
   // RUN LOCK – empêcher les appels simultanés
   if (runLocks[workflowSessionId]) {
     console.log("⏳ Appel ignoré : run déjà en cours pour", workflowSessionId);
-
+    
     return res.json({
       reply: "Analyse en cours… Veuillez patienter quelques instants.",
       threadId: threadsBySession[workflowSessionId] || null,
@@ -402,6 +550,9 @@ app.post("/pdf2press-chat", async (req, res) => {
     } else {
       console.log("♻️ Thread existant :", threadId);
     }
+
+      
+
 
     // =========================
     // Récupération & parsing des logs PDF2Press
@@ -628,13 +779,17 @@ app.post("/pdf2press-chat", async (req, res) => {
 
     runLocks[workflowSessionId] = false;
 
-    return res.json({
-      reply: assistantReply || "Réponse vide",
-      threadId,
-      workflowSessionId,
-      report,
-      helpLinks,
-    });
+    const expert = deriveExpertPrepress(report);
+
+return res.json({
+  reply: assistantReply || "Réponse vide",
+  threadId,
+  workflowSessionId,
+  report,
+  helpLinks,
+  email: email || null,
+  ...expert
+});
   } catch (err) {
     console.error("🔥 ERREUR /pdf2press-chat :", err);
     runLocks[workflowSessionId] = false;
