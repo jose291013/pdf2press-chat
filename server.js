@@ -49,39 +49,47 @@ async function presseroAuthenticate() {
 }
 
 async function presseroGetUserIdByEmail(token, email) {
-  const url = `https://${PRESSERO_ADMIN_URL}/api/site/${PRESSERO_SITE_DOMAIN}/users/?pageNumber=0&pageSize=1&email=${encodeURIComponent(email)}&includeDeleted=false`; // :contentReference[oaicite:8]{index=8}
+  const url = `https://${PRESSERO_ADMIN_URL}/api/site/${PRESSERO_SITE_DOMAIN}/users/?pageNumber=0&pageSize=1&email=${encodeURIComponent(email)}&includeDeleted=false`;
+
   const r = await fetch(url, {
-  method: "POST",
-  headers: {
-    Authorization: presseroAuthHeader(token),
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(payload)
-});
+    method: "GET",
+    headers: {
+      Authorization: presseroAuthHeader(token),
+      "Content-Type": "application/json"
+    }
+  });
+
   if (!r.ok) throw new Error(`Get user by email failed (${r.status}): ${await r.text()}`);
+
   const data = await r.json();
   const user = (data?.Items && data.Items[0]) || null;
   const userId = user?.Id || user?.UserId || user?.ID;
+
   if (!userId) throw new Error(`No user found for email=${email}`);
   return userId;
 }
 
+
 async function presseroGetCart(token, userId) {
-  const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/?userId=${encodeURIComponent(userId)}`; // :contentReference[oaicite:9]{index=9}
+  const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/?userId=${encodeURIComponent(userId)}`;
+
   const r = await fetch(url, {
-  method: "POST",
-  headers: {
-    Authorization: presseroAuthHeader(token),
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(payload)
-});
+    method: "GET",
+    headers: {
+      Authorization: presseroAuthHeader(token),
+      "Content-Type": "application/json"
+    }
+  });
+
   if (!r.ok) throw new Error(`Get cart failed (${r.status}): ${await r.text()}`);
+
   const data = await r.json();
   const cartId = data?.Id || data?.CartId || data?.ID;
   if (!cartId) throw new Error("Cart id missing");
+
   return { cartId, cart: data };
 }
+
 // --- PRICE endpoint ---
 async function presseroGetProductPrice(token, userId, quantities, fontsOuiNon) {
   const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/product/${EXPERT_PRODUCT_ID}/price?userId=${encodeURIComponent(userId)}`;
