@@ -223,10 +223,8 @@ app.post("/api/expert-prepresse/add-to-cart", async (req, res) => {
     const prod =
       sanitizeOneLine(productName || "", 120);
 
-    const itemName =
-      prod
-        ? `Forfait expert prépresse pour le fichier ${fileName} - ${prod}`
-        : `Forfait expert prépresse pour le fichier ${fileName}`;
+    const itemName = `Forfait expert prépresse pour le fichier ${fileName}`;
+
 
     const notes = "Ajouté via PDF2Press chat";
 
