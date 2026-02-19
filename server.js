@@ -121,30 +121,33 @@ async function presseroGetProductPrice(token, userId, quantities, fontsOuiNon) {
 
 
 
-async function presseroAddItem(token, userId, cartId, pricingParameters) {
-  const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/${encodeURIComponent(cartId)}/item/?userId=${encodeURIComponent(userId)}`; // :contentReference[oaicite:10]{index=10}
+async function presseroAddItem(token, userId, cartId, pricingParameters, itemName, notes) {
+  const url = `https://${PRESSERO_ADMIN_URL}/api/cart/${PRESSERO_SITE_DOMAIN}/${encodeURIComponent(cartId)}/item/?userId=${encodeURIComponent(userId)}`;
 
   const payload = {
     ProductId: EXPERT_PRODUCT_ID,
     ShipTo: "",
     ShippingMethod: "",
     PricingParameters: pricingParameters,
-    ItemName: "Expert prépresse",
-    Notes: "Ajouté via PDF2Press chat"
+
+    // ⬇️ DEVENU VARIABLE
+    ItemName: sanitizeOneLine(itemName || "Expert prépresse", 180),
+    Notes: sanitizeOneLine(notes || "Ajouté via PDF2Press chat", 220),
   };
 
   const r = await fetch(url, {
-  method: "POST",
-  headers: {
-    Authorization: presseroAuthHeader(token),
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(payload)
-});
+    method: "POST",
+    headers: {
+      Authorization: presseroAuthHeader(token),
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  });
 
   if (!r.ok) throw new Error(`Add item failed (${r.status}): ${await r.text()}`);
   return await r.json();
 }
+
 
 // -----------------------------------------------------
 // Chemins de base (public/ + config/)
@@ -193,7 +196,7 @@ app.use(express.json());
 // POST /api/expert-prepresse/add-to-cart
 app.post("/api/expert-prepresse/add-to-cart", async (req, res) => {
   try {
-    const { email, mode, expertPrepress } = req.body || {};
+    const { email, mode, expertPrepress, workflowSessionId, productName } = req.body || {};
     if (!email) return res.status(400).json({ ok: false, error: "Missing email" });
     if (!expertPrepress) return res.status(400).json({ ok: false, error: "Missing expertPrepress" });
 
@@ -208,21 +211,44 @@ app.post("/api/expert-prepresse/add-to-cart", async (req, res) => {
     const userId = await presseroGetUserIdByEmail(token, String(email).trim());
     const { cartId } = await presseroGetCart(token, userId);
 
-    // IMPORTANT: on envoie les valeurs, l’API attend un tableau de quantités dans l’ordre Q1,Q2,Q3
-    // et les options sous forme {Key: <optionId>, Value: "Oui"/"Non"} :contentReference[oaicite:11]{index=11}
     const pricingParameters = {
       Quantities: [q1, q2, q3],
-      Options: [
-        { Key: EXPERT_OPT_FONTS_ID, Value: fontsNotEmbedded ? "Oui" : "Non" }
-      ]
+      Options: [{ Key: EXPERT_OPT_FONTS_ID, Value: fontsNotEmbedded ? "Oui" : "Non" }]
     };
 
-    const cartUpdated = await presseroAddItem(token, userId, cartId, pricingParameters);
-    res.json({ ok: true, cart: cartUpdated, injected: { Quantities: [q1,q2,q3], fonts: fontsNotEmbedded ? "Oui":"Non" }});
+    // ✅ Construire un nom d’article variable
+    const fileName =
+      sanitizeOneLine(getSessionFileName(workflowSessionId) || "votre fichier", 120);
+
+    const prod =
+      sanitizeOneLine(productName || "", 120);
+
+    const itemName =
+      prod
+        ? `Forfait expert prépresse pour le fichier ${fileName} - ${prod}`
+        : `Forfait expert prépresse pour le fichier ${fileName}`;
+
+    const notes = "Ajouté via PDF2Press chat";
+
+    const cartUpdated = await presseroAddItem(
+      token,
+      userId,
+      cartId,
+      pricingParameters,
+      itemName,
+      notes
+    );
+
+    res.json({
+      ok: true,
+      cart: cartUpdated,
+      injected: { Quantities: [q1, q2, q3], fonts: fontsNotEmbedded ? "Oui" : "Non", itemName }
+    });
   } catch (e) {
     res.status(500).json({ ok: false, error: e.message || String(e) });
   }
 });
+
 
 // POST /api/expert-prepresse/price
 // Body: { email, mode: "errors_only"|"errors_and_warnings", expertPrepress: { q1_pagesErrors, q2_imagesErrors, q3_imagesWarnings, fontsNotEmbedded } }
@@ -328,6 +354,34 @@ const creatingThreads = {};
 
 // verrou anti-run simultané
 const runLocks = {};
+
+// -----------------------------------------------------
+// Mémo "meta" par workflowSessionId (nom de fichier, etc.)
+// -----------------------------------------------------
+const metaBySession = Object.create(null);
+
+function sanitizeOneLine(str, maxLen = 180) {
+  const s = String(str || "")
+    .replace(/[\r\n\t]+/g, " ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+  return s.length > maxLen ? s.slice(0, maxLen) : s;
+}
+
+function rememberSessionMeta(workflowSessionId, patch) {
+  if (!workflowSessionId) return;
+  const prev = metaBySession[workflowSessionId] || {};
+  metaBySession[workflowSessionId] = {
+    ...prev,
+    ...patch,
+    updatedAt: Date.now(),
+  };
+}
+
+function getSessionFileName(workflowSessionId) {
+  return (metaBySession[workflowSessionId] && metaBySession[workflowSessionId].fileName) || "";
+}
+
 
 // =====================================================
 // PDF2Press logs fetch
@@ -700,6 +754,7 @@ app.post("/pdf2press-chat", async (req, res) => {
         }
       }
     }
+    rememberSessionMeta(workflowSessionId, { fileName: sanitizeOneLine(fileName, 120) });
 
     // Détection langue (body.lang > header > FR)
     const browserLangHeader =
